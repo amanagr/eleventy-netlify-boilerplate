@@ -72,6 +72,7 @@ collections:
     slug: "{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
+      - { label: "Position", name: "position", widget: "number", min: 1}
       - { label: "Tags", name: "tags", widget: "text", default: "feature"}
       - { label: "Image", name: "image", widget: "image" }
       - { label: "Sub Features", name: "sub_features", widget: "relation", collection: "sub_features", search_fields: ["title"], value_field: "title", multiple: true}

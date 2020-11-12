@@ -1,5 +1,6 @@
 ---
 title: Productivity
+position: 2
 tags: feature
 image: /images/featurespage_productivity.svg
 sub_features:
