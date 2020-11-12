@@ -17,6 +17,19 @@ module.exports = function (eleventyConfig) {
   });
   eleventyConfig.addWatchTarget('./src/styles/*.scss')
 
+
+  // Filters
+  function sortByPosition(values) {
+    return values.sort((a, b) => Math.sign(a.data.position - b.data.position));
+  }
+
+  function sortByTitle(values) {
+    return values.sort((a, b) => Math.sign(a.data.title - b.data.title));
+  }
+
+  eleventyConfig.addFilter("sortByPosition", sortByPosition);
+  eleventyConfig.addFilter("sortByTitle", sortByTitle);
+
   return {
     dir: {
       input: 'src',

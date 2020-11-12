@@ -3,4 +3,60 @@ layout: layouts/base.njk
 ---
 
 <div class="features_page text-center text-lg-left">
+    <div class="container p-5">
+        <div class="row">
+            <div class="col-lg-6 m-auto p-4">
+                <h1> {{ hero_title  | capitalize }} </h1>
+                <p> {{ hero_description }}</p>
+                <div class="mt-5">
+                    <a href="" class="btn btn-secondary text-uppercase">Learn more</a>
+                </div>
+            </div>
+            <img class="col-lg-6" src="{{ hero_image }}" />
+        </div>
+    </div>
+    {%- for feature in collections.feature | sortByPosition -%}
+        {%- if feature.data.position % 2 -%}
+        <div class="container-fluid p-5">
+            <div class="row">
+                <img class="col-lg-6" src="{{ feature.data.image }}" />
+                <div class="col-lg-6 m-auto p-4">
+                    <h1> {{ feature.data.title  | capitalize }} </h1>
+                    <p> {{ feature.data.description }}</p>
+                    <div class="mt-5">
+                        <a href="#{{ feature.data.title | slug }}" class="btn btn-secondary text-uppercase" data-toggle="collapse">View features</a>
+                    </div>
+                </div>
+        {%- else -%}
+        <div class="container-fluid bg-purple p-5">
+            <div class="row">
+                <img class="col d-lg-none" src="{{ feature.data.image }}" />
+                <div class="col-lg-4 m-auto p-4">
+                    <h1> {{ feature.data.title | capitalize }} </h1>
+                    <p> {{ feature.data.description }}</p>
+                    <div class="mt-5">
+                        <a href="#{{ feature.data.title | slug }}" class="btn btn-primary text-uppercase" data-toggle="collapse">View features</a>
+                    </div> </div>
+                <img class="col-lg-8 d-none d-lg-block" src="{{ feature.data.image }}" />
+        {%- endif -%}
+            </div>
+            <div id="{{ feature.data.title | slug }}" class="row row-cols-1 row-cols-md-2 g-4 py-5 collapse">
+            {%- for sub_feature in collections.sub_feature | sortByTitle -%}
+                {%- if sub_feature.data.title in feature.data.sub_features -%}
+                    <div class="col">
+                        <div class="card h-100 {% if feature.data.position % 2 %}green{% endif %}">
+                            <div class="card-img-top">
+                                {{ sub_feature.data.svg | safe }}
+                            </div>
+                          <div class="card-body">
+                            <h5 class="card-title text-uppercase">{{ sub_feature.data.title }}</h5>
+                            <p class="card-text">{{ sub_feature.data.description }}</p>
+                          </div>
+                        </div>
+                      </div>
+                {%- endif -%}
+            {%- endfor -%}
+            </div>
+        </div>
+    {%- endfor -%}
 </div>

@@ -18,6 +18,10 @@ a {
     text-decoration: none;
 }
 
+.bg-purple {
+    background-color: $purple;
+}
+
 /* override bootstrap */
 
 .btn-primary {
@@ -378,6 +382,55 @@ nav.navbar {
         &:hover {
             text-decoration: none;
             color: $purple;
+        }
+    }
+}
+
+.features_page {
+    img {
+       max-height: 450px;
+    }
+
+    .card {
+        background-color: transparent;
+        cursor: pointer;
+        transition: all 150ms ease;
+        border-width: 2px;
+        border-style: solid;
+        border-color: transparent;
+        border-radius: 5px;
+
+        .card-img-top {
+            svg {
+                color: $dark-blue;
+                width: 2em;
+                height: 2em;
+                margin: 1em;
+            }
+        }
+
+        .card-title {
+            color: $dark-blue;
+        }
+
+        &:hover {
+            border-color: $dark-blue;
+            box-shadow: 0 5px 25px 0 rgba(0,0,0,0.25);
+            transform: translateY(-3px);
+        }
+
+        &.green {
+            .card-title {
+                color: $light-green;
+            }
+
+            svg {
+                color: $light-green;
+            }
+
+            &:hover {
+                border-color: $light-green;
+            }
         }
     }
 }
