@@ -1,13 +1,8 @@
 ---
-title: "                                 FULL-TEXT FULL-HISTORY
-  SEARCH                             "
-description: "
-
-  \                                Search is both snappy and smart, helping
+title: "FULL-TEXT FULL-HISTORY SEARCH"
+description: "Search is both snappy and smart, helping
   you look for text, people, and threads of conversation, with advanced search
-  operators for fine-grained control.
-
-  \                            "
+  operators for fine-grained control."
 tags: sub_feature
 svg: >-
   <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search"
