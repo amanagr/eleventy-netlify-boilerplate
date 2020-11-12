@@ -48,6 +48,7 @@ collections:
     label: "Banner"
     folder: "src/data/banners"
     create: false
+    slug: "banner"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Show", name: "show", widget: "boolean", default: true}
