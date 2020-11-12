@@ -33,10 +33,12 @@ a {
     white-space: nowrap;
     transition: all 0.3s;
 
-    &:hover {
+    &:hover,
+    &:focus {
         color: $light-green;
         background-color: $dark-blue;
         border-color: $light-green;
+        box-shadow: unset;
     }
 }
 
@@ -49,10 +51,12 @@ a {
     white-space: nowrap;
     transition: all 0.3s;
 
-    &:hover {
+    &:hover,
+    &:focus {
         background-color: $light-green;
         color: $dark-blue;
         border-color: transparent;
+        box-shadow: unset;
     }
 }
 
@@ -61,6 +65,14 @@ a {
 
     p {
         margin: auto;
+    }
+}
+
+.separator {
+    hr {
+        color: $purple;
+        height: 2px;
+        opacity: 1;
     }
 }
 
@@ -267,13 +279,6 @@ nav.navbar {
         }
     }
 
-    .separator {
-        hr {
-            color: $purple;
-            height: 2px;
-            opacity: 1;
-        }
-    }
 }
 
 /* -- company logos -- */
@@ -431,6 +436,12 @@ nav.navbar {
             &:hover {
                 border-color: $light-green;
             }
+        }
+    }
+
+    .apps-section {
+        h1 {
+            color: $purple;
         }
     }
 }
