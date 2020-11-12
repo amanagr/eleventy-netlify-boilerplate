@@ -74,5 +74,5 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Tags", name: "tags", widget: "text", default: "feature"}
       - { label: "Image", name: "image", widget: "image" }
-      - { label: "Background image", name: "bg_image", widget: "image" }
       - { label: "Sub Features", name: "sub_features", widget: "relation", collection: "sub_features", search_fields: ["title"], value_field: "title", multiple: true}
+      - { label: "Description", name: "description", widget: "text" }
