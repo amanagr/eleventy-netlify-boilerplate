@@ -1,0 +1,383 @@
+
+// Import our custom variables
+@import "variables";
+
+// Manual Bootstrap Import
+// TODO: Don't import bootstrap scss libraries we
+// are not using here.
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+
+/* -- defaults -- */
+body {
+    background-color: $dark-blue;
+    color: hsl(0, 0%, 100%);
+}
+
+a {
+    text-decoration: none;
+}
+
+/* override bootstrap */
+
+.btn-primary {
+    padding: 8px 20px;
+    border-radius: 9px;
+    background-color: $light-green;
+    color: $dark-blue;
+    border-color: transparent;
+    white-space: nowrap;
+    transition: all 0.3s;
+
+    &:hover {
+        color: $light-green;
+        background-color: $dark-blue;
+        border-color: $light-green;
+    }
+}
+
+.btn-secondary {
+    padding: 8px 20px;
+    border-radius: 9px;
+    color: $light-green;
+    background-color: $dark-blue;
+    border-color: $light-green;
+    white-space: nowrap;
+    transition: all 0.3s;
+
+    &:hover {
+        background-color: $light-green;
+        color: $dark-blue;
+        border-color: transparent;
+    }
+}
+
+.banner {
+    background: $purple-blue-gradient-horizontal;
+
+    p {
+        margin: auto;
+    }
+}
+
+/* -- navbar styling -- */
+
+nav.navbar {
+    padding-top: 3rem !important;
+
+    .navbar-brand {
+        img {
+            width: calc(8rem + 1vw);
+        }
+    }
+
+    .navbar-toggler:active {
+        background-color: inherit;
+    }
+
+    .nav-link {
+        color: hsl(0, 0%, 100%) !important;
+        padding-right: calc(2rem + 1vw) !important;
+
+        &:hover {
+            text-decoration: none;
+            background-color: inherit;
+            color: $purple !important;
+        }
+    }
+
+    @media (max-width: 992px) {
+        .nav-try-now {
+            display: none;
+        }
+    }
+}
+
+/* navbar animations */
+@media (min-width: 992px) {
+    .dropdown-menu {
+      animation-duration: 0.3s;
+      animation-duration: 0.3s;
+      animation-fill-mode: both;
+      animation-fill-mode: both;
+    }
+
+    .dropdown-toggle::after {
+        content: none;
+    }
+
+    .nav-item:hover .dropdown-menu {
+        display: block;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(1rem);
+        opacity: 0;
+    }
+    100% {
+        transform:translateY(0);
+        opacity: 1;
+    }
+    0% {
+        transform: translateY(1rem);
+        opacity: 0;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: transform;
+        -webkit-opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        -webkit-opacity: 1;
+    }
+    0% {
+        transform: translateY(1rem);
+        -webkit-opacity: 0;
+    }
+}
+
+.dropdown-menu {
+    // So that the dropdown doesn't close when moving between button and dropdown
+    margin-top: 0;
+
+    // Animation for dropdown menu.
+    animation-name: slideIn;
+    animation-name: slideIn;
+}
+
+// style for home.njk
+.home_page {
+
+    img {
+        // Fixes img stretching to whole flex container
+        align-self: center;
+    }
+
+    .hero-try-now:hover {
+        background-color: hsl(155, 86%, 72%);
+        color: $dark-blue;
+        border-color: transparent;
+    }
+
+    .btn.watch-now svg {
+        position: relative;
+        top: -2px;
+    }
+
+    @media (max-width: 992px) {
+        .hero-try-now,
+        .watch-now {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    }
+
+    .introduction-video-section {
+        background: $purple-blue-gradient;
+        text-align: center;
+
+        .introduction-video {
+            width: 60%;
+            margin: auto;
+            padding: 3%;
+        }
+    }
+
+    .no-more-buried-messages {
+        background-image: url("../../images/Homepage_Threading2.svg");
+        background-repeat: no-repeat;
+        background-position: 0% 26%;
+    }
+
+    .apps-section {
+        background-color: $purple;
+        text-align: center;
+    }
+
+    @media (min-width: 992px) {
+        .integrations-section {
+            background-image: url("../../images/Homepage_Integration.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            .row {
+                height: 40vw;
+            }
+        }
+    }
+
+    .integrations-section {
+        .col-lg-6 {
+            align-self: center;
+        }
+    }
+
+    .testimonials {
+        background-color: $purple;
+
+        img {
+            height: $home-testimonial-avatar-height;
+        }
+
+        .carousel-control {
+            span {
+                position: absolute;
+                top: calc(#{$home-testimonial-avatar-height} / 2);
+                bottom: unset;
+            }
+        }
+    }
+
+    .trusted-by {
+        h1 {
+            text-align: center;
+            color: $purple;
+        }
+
+        .company-box {
+            display: block;
+            padding: 20px;
+
+            .company {
+                display: inline-block;
+                width: 100%;
+                height: 60px;
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                margin: 10px 0 !important;
+            }
+        }
+    }
+
+    .second-apps-section {
+        background-color: transparent;
+
+        h1 {
+            color: $purple;
+        }
+    }
+
+    .separator {
+        hr {
+            color: $purple;
+            height: 2px;
+            opacity: 1;
+        }
+    }
+}
+
+/* -- company logos -- */
+.company-box .company.akamai {
+    background-image: url(../../images/logos/akamai.png);
+    background-color: transparent;
+}
+
+.company-box .company.doctorondemand {
+    background-image: url(../../images/logos/doctorondemand.png);
+    background-color: transparent;
+}
+
+.company-box .company.layershift {
+    background-image: url(../../images/logos/layershift.png);
+    background-color: transparent;
+}
+
+.company-box .company.recurse {
+    background-image: url(../../images/logos/recurse.png);
+    background-color: transparent;
+}
+
+.company-box .company.solano {
+    background-image: url(../../images/logos/solano.png);
+    background-color: transparent;
+}
+
+.company-box .company.veelo {
+    background-image: url(../../images/logos/veelo.png);
+    background-color: transparent;
+}
+
+.company-box .company.panjiva {
+    background-image: url(../../images/logos/panjiva.png);
+    background-color: transparent;
+}
+
+.company-box .company.cmt {
+    background-image: url(../../images/logos/cambridge-mobile-telematics.png);
+    background-color: transparent;
+}
+
+.company-box .company.levelup {
+    background-image: url(../../images/logos/levelup.png);
+    background-color: transparent;
+}
+
+.company-box .company.wildfly {
+    background-image: url(../../images/logos/wildfly.png);
+    background-color: transparent;
+}
+
+.company-box .company.mariadb {
+    background-image: url(../../images/logos/mariadb.png);
+    background-color: transparent;
+}
+
+.company-box .company.infinispan {
+    background-image: url(../../images/logos/infinispan.png);
+    background-color: transparent;
+    height: 50px;
+}
+
+.company-box .company.hail {
+    background-image: url(../../images/logos/hail.png);
+    background-color: transparent;
+}
+
+.company-box .company.inspire-hep {
+    background-image: url(../../images/logos/inspire-hep.png);
+    background-color: transparent;
+}
+
+.company-box .company.wikimedia-outreach {
+    background-image: url(../../images/logos/wikimedia-outreach.png);
+    background-color: transparent;
+}
+
+.company-box .company.fhir {
+    background-image: url(../../images/logos/fhir.png);
+    background-color: transparent;
+}
+
+.company-box .company.openshot {
+    background-image: url(../../images/logos/openshot.png);
+    background-color: transparent;
+}
+
+.company-box .company.mixxx {
+    background-image: url(../../images/logos/mixxx.png);
+    background-color: transparent;
+    height: 45px;
+}
+
+.landing-footer {
+    background-color: $dark-blue;
+
+    ul, li, h3 {
+        color: hsl(0, 0%, 100%);
+    }
+
+    a {
+        color: hsl(0, 0%, 100%);
+
+        &:hover {
+            text-decoration: none;
+            color: $purple;
+        }
+    }
+}

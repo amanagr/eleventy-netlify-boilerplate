@@ -1,0 +1,18 @@
+$dark-blue: hsl(209, 80%, 17%);
+$light-blue: hsl(212, 91%, 69%);
+$purple: hsl(238, 86%, 71%);
+$light-green: hsl(155, 62%, 71%);
+$purple-blue-gradient: linear-gradient(
+    0deg,
+    $purple,
+    $light-blue
+);
+
+$purple-blue-gradient-horizontal: linear-gradient(
+    90deg,
+    $purple,
+    $light-blue
+);
+
+// Home vars
+$home-testimonial-avatar-height: 200px;

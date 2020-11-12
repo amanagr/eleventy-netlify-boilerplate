@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- CSS only -->
+<link rel="stylesheet" href="{{ 'src/styles/main.css' | url }}">
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title }}</title>
+</head>
+<body>
+
+    {%- for banner in collections.banner -%}
+      {%- if banner.data.show -%}
+        <div class="banner p-2 text-center">
+          <p><strong>{{ banner.data.title }}</strong></p>
+        </div>
+      {%- endif -%}
+    {%- endfor -%}
+    {% include "../components/navBar.njk" %}
+    {{ content | safe }}
+    {% include "../components/footer.njk" %}
+</body>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
+<!-- Bootstrap JavaScript Bundle with Popper.js -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js" integrity="sha384-BOsAfwzjNJHrJ8cZidOg56tcQWfp6y72vEJ8xQ9w6Quywb24iOsW913URv1IS4GD" crossorigin="anonymous"></script>
+</html>

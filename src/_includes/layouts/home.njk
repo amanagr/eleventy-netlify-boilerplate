@@ -1,0 +1,175 @@
+---
+layout: layouts/base.njk
+---
+
+<div class="home_page text-center text-lg-left">
+    <div class="container py-5">
+        <div class="row hero-row">
+            <div class="col-lg-5 m-auto">
+                <h1>{{ hero_heading }}</h1>
+                <p>
+                    {{ hero_description }}
+                </p>
+                <div class="mt-5 text-uppercase">
+                    <a href="" class="btn btn-primary hero-try-now">Try now</a>
+                    <a href="" class="btn btn-secondary watch-now">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-play-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.596 8.697l-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
+                        </svg>
+                        Watch now
+                    </a>
+                </div>
+            </div>
+            <img class="homepage_hero_img col-lg-7" src="{{ hero_image }}" />
+        </div>
+    </div>
+    <div class="introduction-video-section">
+        <img class="introduction-video" src="images/landing-video.png">
+    </div>
+    <div class="container-fluid no-more-buried-messages py-4">
+        <div class="container">
+            <div class="row">
+                <img class="col-lg-6" src="{{ image1 }}" />
+                <div class="col-lg-6 m-auto">
+                    <h1> {{ heading1 }} </h1>
+                    <p> {{ description1 }}</p>
+                    <div class="mt-5">
+                        <a href="" class="btn btn-secondary text-uppercase">Learn more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid asynchronous-conversations py-4">
+        <div class="container">
+            <div class="row">
+                <img class="col d-lg-none" src="{{ image2 }}" />
+                <div class="col-lg-4 m-auto">
+                    <h1> {{ heading2 }} </h1>
+                    <p> {{ description2 }}</p>
+                    <div class="mt-5">
+                        <a href="" class="btn btn-secondary text-uppercase">See more</a>
+                    </div>
+                </div>
+                <img class="col-lg-8 d-none d-lg-block" src="{{ image2 }}" />
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid open-source py-4">
+        <div class="container">
+            <div class="row">
+                <img class="col-lg-6" src="{{ image3 }}" />
+                <div class="col-lg-6 m-auto">
+                    <h1> {{ heading3 }} </h1>
+                    <p> {{ description3 }}</p>
+                    <div class="mt-5">
+                        <a href="" class="btn btn-secondary text-uppercase">Join community</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid apps-section py-5">
+        <h1>Ready to get started?</h1>
+        <h3>Apps for every platform</h3>
+        <div class="mt-5">
+            <a href="" class="btn btn-primary text-uppercase apps-try-now">Try now</a>
+        </div>
+    </div>
+    <div class="integrations-section container-fluid text-center px-5 py-5">
+        <div class="row">
+            <div class="col-lg-6">
+                <h1>Seamless integration with everything you use</h1>
+                <p>
+                    Zulip provides over 90 native integrations. Hundreds more are available through Hubot, Zapier, and IFTTT.
+                </p>
+                <div class="mt-4">
+                    <a href="/integrations" class="btn btn-primary text-uppercase">See all integrations</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="testimonials container-fluid text-center">
+        <div class="container py-5">
+            <div class="wrapper-carousel-fix">
+                <!-- Carousel Wrapper -->
+                <div id="carousel-example-1" class="carousel no-flex testimonial-carousel slide carousel-fade" data-ride="carousel" data-interval="false">
+                <!--Slides-->
+                <div class="carousel-inner" role="listbox">
+                    {%- for testimonial in collections.testimonial -%}
+                        <div class="carousel-item {% if testimonial.data.active %} active {% endif %}">
+                            <div class="testimonial">
+                                <!--Avatar-->
+                                <div class="avatar mx-auto mb-4">
+                                    <img src="{{ testimonial.data.image }}" class="rounded-circle img-fluid" alt="author avatar">
+                                </div>
+                                <!--Content-->
+                                <p>
+                                <i class="fas fa-quote-left"></i> {{ testimonial.data.quote }}  </p>
+                                <h4 class="font-weight-bold">{{ testimonial.data.author }}</h4>
+                                <h6 class="font-weight-bold my-3">{{ testimonial.data.designation }} at {{ testimonial.data.company }}</h6>
+                            </div>
+                        </div>
+                    {%- endfor -%}
+                    <!--First slide-->
+                </div>
+                <!--Slides-->
+                <!--Controls-->
+                <a class="carousel-control-prev left carousel-control" href="#carousel-example-1" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </a>
+                <a class="carousel-control-next right carousel-control" href="#carousel-example-1" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </a>
+                <!--Controls-->
+                </div>
+                <!-- Carousel Wrapper -->
+            </div>
+        </div>
+    </div>
+    <div class="container trusted-by my-5">
+        <h1 class="text-uppercase">Trusted by</h1>
+        <div class="company-box">
+            <div class="row">
+                <div class="col-md-3 col-6">
+                    <div class="company akamai"></div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="company wikimedia-outreach"></div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="company doctorondemand"></div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="company mariadb"></div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3 col-6">
+                    <div class="company levelup"></div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="company recurse"></div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="company cmt"></div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="company layershift"></div>
+                </div>
+              </div>
+        </div> 
+    </div>
+    <div class="container-fluid apps-section second-apps-section py-5">
+        <h1>Ready to get started?</h1>
+        <h3>Apps for every platform</h3>
+        <div class="mt-5">
+            <a href="" class="btn btn-primary text-uppercase">Try now</a>
+        </div>
+    </div>
+    <div class="container separator">
+        <hr>
+    </div>
+</div>
