@@ -53,3 +53,26 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Show", name: "show", widget: "boolean", default: true}
       - { label: "Tags", name: "tags", widget: "text", default: "banner"}
+
+  - name: "sub_features"
+    label: "Sub features"
+    folder: "src/data/sub_features"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Tags", name: "tags", widget: "text", default: "sub_feature"}
+      - { label: "SVG", name: "svg", widget: "text" }
+
+  - name: "features"
+    label: "Features"
+    folder: "src/data/features"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Tags", name: "tags", widget: "text", default: "feature"}
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Background image", name: "bg_image", widget: "image" }
+      - { label: "Sub Features", name: "sub_features", widget: "relation", collection: "sub_features", search_fields: ["title"], value_field: "title", multiple: true}
