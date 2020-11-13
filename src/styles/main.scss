@@ -445,3 +445,27 @@ nav.navbar {
         }
     }
 }
+
+.community_page {
+    .ways_to_contribute {
+        background-color: $purple;
+
+        .card {
+            color: hsl(0, 0%, 100%);
+            background-color: $purple;
+            border: 0;
+
+            .img-col {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            img {
+                max-height: 7em;
+                margin: auto;
+                display: block;
+            }
+        }
+    }
+}
