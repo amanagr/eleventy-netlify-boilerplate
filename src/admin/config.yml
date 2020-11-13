@@ -25,9 +25,18 @@ collections:
       - { label: "Hero heading", name: "hero_heading", widget: "string" }
       - { label: "Hero description", name: "hero_description", widget: "string" }
       - { label: "Hero image", name: "hero_image", widget: "image", default: "images/Homepage_Hero.svg" }
-      - { label: "Heading 1", name: "heading1", widget: "string" }
-      - { label: "Description 1", name: "description1", widget: "string" }
-      - { label: "Image 1", name: "image1", widget: "image", default: "images/Homepage_Threading1.svg"}
+      - { label: "Heading 1", name: "heading1", widget: "string" , required: false}
+      - { label: "Description 1", name: "description1", widget: "string" , required: false}
+      - { label: "Image 1", name: "image1", widget: "image", default: "images/Homepage_Threading1.svg", required: false}
+      - { label: "Heading 2", name: "heading2", widget: "string" , required: false}
+      - { label: "Description 2", name: "description2", widget: "string" , required: false}
+      - { label: "Image 2", name: "image2", widget: "image", default: "images/Homepage_Threading1.svg", required: false}
+      - { label: "Heading 3", name: "heading3", widget: "string" , required: false}
+      - { label: "Description 3", name: "description3", widget: "string" , required: false}
+      - { label: "Image 3", name: "image3", widget: "image", default: "images/Homepage_Threading1.svg", required: false}
+      - { label: "Heading 4", name: "heading4", widget: "string" , required: false}
+      - { label: "Description 4", name: "description4", widget: "string" , required: false}
+      - { label: "Image 4", name: "image4", widget: "image", default: "images/Homepage_Threading1.svg", required: false}
 
   - name: "testimonials"
     label: "Testimonials"
