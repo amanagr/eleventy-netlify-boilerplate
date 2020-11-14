@@ -1,4 +1,5 @@
 const sass = require('./build-process/sass-process');
+const markdownIt = require("markdown-it");
 
 module.exports = function (eleventyConfig) {
   // Eleventy doesn't watch changes in files / folders mentioned
@@ -29,6 +30,14 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter("sortByPosition", sortByPosition);
   eleventyConfig.addFilter("sortByTitle", sortByTitle);
+
+  const md = new markdownIt({
+    html: true
+  });
+
+  eleventyConfig.addFilter("markdown", (content) => {
+    return md.render(content);
+  });
 
   return {
     dir: {

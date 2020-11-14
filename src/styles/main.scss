@@ -63,6 +63,11 @@ a {
 .banner {
     background: $purple-blue-gradient-horizontal;
 
+    a {
+        color: hsl(0, 0, 100%);
+        text-decoration: underline;
+    }
+
     p {
         margin: auto;
     }

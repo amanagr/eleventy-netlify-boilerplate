@@ -11,8 +11,8 @@
 
     {%- for banner in collections.banner -%}
       {%- if banner.data.show -%}
-        <div class="banner p-2 text-center">
-          <p><strong>{{ banner.data.title }}</strong></p>
+        <div class="banner p-2 text-center" >
+          <p> {{ banner.data.title | markdown | safe }} </p>
         </div>
       {%- endif -%}
     {%- endfor -%}
