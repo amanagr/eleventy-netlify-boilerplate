@@ -55,10 +55,12 @@ collections:
 
   - name: "banner"
     label: "Banner"
+    identifier_field: "slug"
     folder: "src/data/banners"
     create: true
-    slug: "{{slug}}"
+    slug: "{{fields.slug}}"
     fields:
+      - { lable: "Slug", name: "slug", widget: "string"}
       - { label: "Title", name: "title", widget: "markdown"}
       - { label: "Show", name: "show", widget: "boolean", default: true}
       - { label: "Tags", name: "tags", widget: "text", default: "banner"}
