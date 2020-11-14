@@ -59,7 +59,7 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Title", name: "title", widget: "markdown"}
       - { label: "Show", name: "show", widget: "boolean", default: true}
       - { label: "Tags", name: "tags", widget: "text", default: "banner"}
 
