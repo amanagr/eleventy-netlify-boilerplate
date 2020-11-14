@@ -96,7 +96,7 @@ collections:
   # * Rest is content rendered in markdown
   - name: "markdown_pages"
     label: "Markdown Pages"
-    folder: "src/pages"
+    folder: "src/pages/markdown_pages"
     create: true
     slug: "{{slug}}"
     fields:
