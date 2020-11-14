@@ -2,7 +2,7 @@
 layout: layouts/markdown_page.njk
 title: Zulip Securtiy
 hero_image: images/security.jpg
-content: >
+description: >
   Zulip’s security strategy covers all aspects of our product and
 
   business. Making sure your information stays protected is our highest

@@ -3,6 +3,19 @@ layout: layouts/base.njk
 ---
 
 <style>
+	.markdown-content {
+		background-color: hsl(0, 0%, 100%);
+		color: hsl(0, 0%, 0%);
+		margin: 0;
+	}
+
+	.content-container {
+		max-width: 780px;
+		margin: auto;
+		padding: 20px 1px;
+		line-height: 1.625rem;
+	}
+
 	.navbar {
 		background: transparent;
 		position: absolute;
@@ -34,4 +47,9 @@ layout: layouts/base.njk
 <div class="container-fluid hero text-center">
 	<div class="bg-dimmer"></div>
 	<h1>{{ title }}</h1>
+</div>
+<div class="container-fluid markdown-content">
+	<div class="content-container">
+		{{ description | markdown | safe }}
+	</div>
 </div>

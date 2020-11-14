@@ -103,6 +103,6 @@ collections:
       - { label: "Layout", name: "layout", widget: "string", default: "layouts/markdown_page.njk"}
       - { label: "Title", name: "title", widget: "string"}
       - { label: "Hero image", name: "hero_image", widget: "string"}
-      - { label: "Content", name: "content", widget: "markdown"}
+      - { label: "Description", name: "description", widget: "markdown"}
       - { label: "Show", name: "show", widget: "boolean", default: true}
       - { label: "Permalink", name: "permalink", widget: "string" }
