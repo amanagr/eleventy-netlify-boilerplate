@@ -1,5 +1,5 @@
 ---
-title: Welcome to Zulip 4.0
+title: Welcome to [Zulip](https://zulip.com) 4.0
 show: true
 tags: banner
 ---
