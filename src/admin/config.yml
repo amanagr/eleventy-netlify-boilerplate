@@ -20,6 +20,7 @@ collections:
     create: true # Change to true to allow editors to create new pages
     slug: "{{slug}}"
     fields:
+      - { label: "Layout", name: "layout", widget: "string", default: "layouts/base.njk"}
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Permalink", name: "permalink", widget: "string" }
       - { label: "Hero heading", name: "hero_heading", widget: "string" }
@@ -88,3 +89,20 @@ collections:
       - { label: "Image", name: "image", widget: "image" }
       - { label: "Sub Features", name: "sub_features", widget: "relation", collection: "sub_features", search_fields: ["title"], value_field: "title", multiple: true}
       - { label: "Description", name: "description", widget: "text" }
+
+  # eg: security
+  # Format:
+  # * jumbotron image with text
+  # * Rest is content rendered in markdown
+  - name: "markdown_pages"
+    label: "Markdown Pages"
+    folder: "src/pages"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Layout", name: "layout", widget: "string", default: "layouts/markdown_page.njk"}
+      - { label: "Title", name: "title", widget: "string"}
+      - { label: "Hero image", name: "hero_image", widget: "string"}
+      - { label: "Content", name: "content", widget: "markdown"}
+      - { label: "Show", name: "show", widget: "boolean", default: true}
+      - { label: "Permalink", name: "permalink", widget: "string" }
