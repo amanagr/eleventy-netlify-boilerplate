@@ -30,6 +30,10 @@ module.exports = function (eleventyConfig) {
 
   // compress and combine js files
   eleventyConfig.addFilter("jsmin", function(code) {
+    if (!code) {
+      return "";
+    }
+
     const UglifyJS = require("uglify-js");
     let minified = UglifyJS.minify(code);
       if( minified.error ) {
