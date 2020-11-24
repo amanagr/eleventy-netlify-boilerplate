@@ -28,6 +28,17 @@ module.exports = function (eleventyConfig) {
     return values.sort((a, b) => Math.sign(a.data.title - b.data.title));
   }
 
+  // compress and combine js files
+  eleventyConfig.addFilter("jsmin", function(code) {
+    const UglifyJS = require("uglify-js");
+    let minified = UglifyJS.minify(code);
+      if( minified.error ) {
+          console.log("UglifyJS error: ", minified.error);
+          return code;
+      }
+      return minified.code;
+  });
+
   eleventyConfig.addFilter("sortByPosition", sortByPosition);
   eleventyConfig.addFilter("sortByTitle", sortByTitle);
 
