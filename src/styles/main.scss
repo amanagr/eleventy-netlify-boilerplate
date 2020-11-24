@@ -7,7 +7,6 @@
 // are not using here.
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
-
 /* -- defaults -- */
 body {
     background-color: $dark-blue;
@@ -45,18 +44,20 @@ a {
 .btn-secondary {
     padding: 8px 20px;
     border-radius: 9px;
-    color: $light-green;
-    background-color: $dark-blue;
+    color: $light-green !important;
+    background-color: $dark-blue !important;
     border-color: $light-green;
     white-space: nowrap;
     transition: all 0.3s;
+    text-decoration: none !important;
 
     &:hover,
     &:focus {
-        background-color: $light-green;
-        color: $dark-blue;
+        background-color: $light-green !important;
+        color: $dark-blue !important;
         border-color: transparent;
         box-shadow: unset;
+        text-decoration: none !important;
     }
 }
 
@@ -474,3 +475,43 @@ nav.navbar {
         }
     }
 }
+
+.apps_page {
+    .underline-link,
+    #third-party-apps {
+        a {
+            color: white;
+            text-decoration: underline;
+
+            &:hover , &:focus {
+                color: white;
+                text-decoration: underline;
+            }
+        }
+    }
+    .apps {
+        .icons {
+            font-size: 3rem;
+            color: hsla(210, 75%, 17%, 68%);
+            padding: 30px;
+
+            &:hover, &:focus {
+                color: $light-green;
+                opacity: 80%;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .icons::after {
+                content: attr(data-label);
+                display: block;
+                margin-top: 10px;
+                color: white;
+                font-size: 0.8rem;
+                font-family: sans-serif;
+                font-weight: 600;
+            }
+        }
+    }
+}
+

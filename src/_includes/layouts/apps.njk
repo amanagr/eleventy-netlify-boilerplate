@@ -2,10 +2,10 @@
 layout: layouts/base.njk
 ---
 
-<div class="home_page text-center text-lg-left">
+<div class="home_page apps_page text-center text-lg-left">
     <div class="container py-5">
         <div class="row hero-row">
-            <div class="col-lg-5 m-auto">
+            <div class="col-lg-5 m-auto underline-link">
                 <h1>{{ app_heading }}</h1>
                 <p>
                     {{ app_description | markdown | safe }}
@@ -20,6 +20,32 @@ layout: layouts/base.njk
                 </div>
             </div>
             <img class="homepage_hero_img col-lg-7" src="{{ app_image }}" />
+        </div>
+    </div>
+    <div class="container-fluid apps-section py-5">
+        <h3>Apps for every platform</h3>
+        <div class="apps">
+            <a class="" href="/apps/mac.html">
+                <i class="icons fab fa-apple" data-label="macOS"></i>
+            </a>
+            <a class="" href="/apps/windows.html">
+                <i class="icons fab fa-windows" data-label="Windows"></i>
+            </a>
+            <a class="" href="/apps/linux.html">
+                <i class="icons fab fa-linux" data-label="Linux"></i>
+            </a>
+            <a class="" href="/apps/android.html">
+                <i class="icons fab fa-android" data-label="Android"></i>
+            </a>
+            <a class="" href="/apps/ios.html">
+                <i class="icons fas fa-mobile-alt" data-label="iOS"></i>
+            </a>
+        </div>
+        <div id="third-party-apps">
+            Zulip also works great in pinned browser tabs and
+            multi-protocol desktop chat apps
+            like <a href="https://rambox.pro">Rambox</a>
+            and <a href="https://getferdi.com">Ferdi</a>.
         </div>
     </div>
 </div>
