@@ -8,7 +8,7 @@ layout: layouts/base.njk
             <div class="col-lg-5 m-auto">
                 <h1>{{ hero_heading }}</h1>
                 <p>
-                    {{ hero_description }}
+                    {{ hero_description | markdown | safe }}
                 </p>
                 <div class="mt-5 text-uppercase">
                     <a href="" class="btn btn-primary hero-try-now">Try now</a>
