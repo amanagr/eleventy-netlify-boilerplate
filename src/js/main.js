@@ -14,7 +14,7 @@ function go_to_app_download_link(platform) {
     const version = response[0]['name'].slice(1);
 
     const PLATFORM_TO_SETUP_FILE = {
-        "linux": "Zulip-" + version + "x86_64.AppImage",
+        "linux": "Zulip-" + version + "-x86_64.AppImage",
         "mac": "Zulip-" + version + ".dmg",
         "windows": "Zulip-Web-Setup-" + version + ".exe",
     };
