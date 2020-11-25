@@ -2,6 +2,7 @@
 layout: layouts/apps.njk
 title: Mac app
 permalink: apps/mac.html
+platform: mac
 app_heading: Zulip for macOS
 app_description: >-
   Zulip on macOS is even better than Zulip on the web, with a cleaner look, tray
