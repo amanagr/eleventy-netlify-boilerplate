@@ -513,5 +513,31 @@ nav.navbar {
             }
         }
     }
+    .download-buttons-section {
+        margin-bottom: 30px;
+    }
 }
 
+.download-from-google-play-store,
+#download-android-apk {
+    display: none !important;
+}
+
+.android {
+    #download-android-apk {
+        font-size: 0.7rem;
+        margin-left: 20px;
+        white-space: nowrap;
+    }
+    button.btn-secondary {
+        display: none !important;
+    }
+    .homepage_hero_img {
+        width: 250px;
+        margin: auto;
+    }
+    .download-from-google-play-store,
+    #download-android-apk {
+        display: inline !important;
+    }
+}
