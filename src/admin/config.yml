@@ -119,4 +119,4 @@ collections:
       - { label: "App heading", name: "app_heading", widget: "string" }
       - { label: "App description", name: "app_description", widget: "markdown" }
       - { label: "App image", name: "app_image", widget: "image"}
-      - { label: "Script", name: "js", widget: "code", deafult_language: "js" }
+      - { label: "Script", name: "js", widget: "code", deafult_language: "JavaScript" }
