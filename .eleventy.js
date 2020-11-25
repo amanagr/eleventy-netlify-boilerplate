@@ -1,4 +1,5 @@
 const sass = require('./build-process/sass-process');
+const minifyJs = require('./build-process/js-process');
 const markdownIt = require("markdown-it");
 
 module.exports = function (eleventyConfig) {
@@ -12,12 +13,17 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/admin");
   eleventyConfig.addPassthroughCopy("images");
 
+  // Sass pre-processing
   eleventyConfig.on('beforeBuild', () => {
-    // Sass pre-processing
     sass('./src/styles/main.scss', './_site/src/styles/main.css');
   });
   eleventyConfig.addWatchTarget('./src/styles/*.scss')
 
+  // Minify JS
+  eleventyConfig.on('beforeBuild', () => {
+    minifyJs('./src/js/main.js', './_site/src/js/main.js');
+  });
+  eleventyConfig.addWatchTarget('./src/js/*.js')
 
   // Filters
   function sortByPosition(values) {
@@ -27,21 +33,6 @@ module.exports = function (eleventyConfig) {
   function sortByTitle(values) {
     return values.sort((a, b) => Math.sign(a.data.title - b.data.title));
   }
-
-  // compress and combine js files
-  eleventyConfig.addFilter("jsmin", function(code) {
-    if (!code) {
-      return "";
-    }
-
-    const UglifyJS = require("uglify-js");
-    let minified = UglifyJS.minify(code);
-      if( minified.error ) {
-          console.log("UglifyJS error: ", minified.error);
-          return code;
-      }
-      return minified.code;
-  });
 
   eleventyConfig.addFilter("sortByPosition", sortByPosition);
   eleventyConfig.addFilter("sortByTitle", sortByTitle);
