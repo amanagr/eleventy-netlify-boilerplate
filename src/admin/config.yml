@@ -113,10 +113,10 @@ collections:
     create: true # Change to true to allow editors to create new pages
     slug: "{{slug}}"
     fields:
-      - { label: "Layout", name: "layout", widget: "string", default: "layouts/base.njk"}
+      - { label: "Layout", name: "layout", widget: "string", default: "layouts/apps.njk"}
       - { label: "Title", name: "title", widget: "string" }
+      - { label: "Platform", name: "platform", widget: "string" }
       - { label: "Permalink", name: "permalink", widget: "string" }
       - { label: "App heading", name: "app_heading", widget: "string" }
       - { label: "App description", name: "app_description", widget: "markdown" }
       - { label: "App image", name: "app_image", widget: "image"}
-      - { label: "Script", name: "js", widget: "code", deafult_language: "JavaScript" }
