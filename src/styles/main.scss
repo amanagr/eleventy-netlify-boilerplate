@@ -519,11 +519,13 @@ nav.navbar {
 }
 
 .download-from-google-play-store,
+.download-from-app-store,
 #download-android-apk {
     display: none !important;
 }
 
-.android {
+.android,
+.ios {
     #download-android-apk {
         font-size: 0.7rem;
         margin-left: 20px;
@@ -536,8 +538,18 @@ nav.navbar {
         width: 250px;
         margin: auto;
     }
+
+}
+
+.android {
     .download-from-google-play-store,
     #download-android-apk {
+        display: inline !important;
+    }
+}
+
+.ios {
+    .download-from-app-store {
         display: inline !important;
     }
 }
