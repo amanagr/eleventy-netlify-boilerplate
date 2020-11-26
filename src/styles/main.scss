@@ -21,6 +21,10 @@ a {
     background-color: $purple;
 }
 
+.light-opacity {
+    opacity: 0.7;
+}
+
 /* override bootstrap */
 
 .btn-primary {
@@ -551,5 +555,27 @@ nav.navbar {
 .ios {
     .download-from-app-store {
         display: inline !important;
+    }
+}
+
+.team-page {
+    .team-profiles {
+        border-top: 1px solid #ededed;
+        padding-top: 10px;
+    }
+    .profile-picture {
+        max-width: 250px;
+
+        img {
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .profile-name,
+        .profile-role {
+            text-align: center;
+        }
     }
 }

@@ -1,0 +1,118 @@
+---
+layout: layouts/base.njk
+---
+
+<style>
+    .markdown-content {
+        background-color: hsl(0, 0%, 100%);
+        color: hsl(0, 0%, 0%);
+        margin: 0;
+    }
+
+    .content-container {
+        max-width: 780px;
+        margin: auto;
+        padding: 20px 1px;
+        line-height: 1.625rem;
+    }
+
+    .navbar {
+        background: transparent;
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+    }
+
+    .hero {
+        position: relative;
+        background-image: url("{{ hero_image }}");
+        background-size: cover;
+        background-position: center;
+        padding: 225px 50px 125px 50px;
+        color: hsl(0, 0%, 100%);
+        z-index: 0;
+    }
+
+    .bg-dimmer {
+        z-index: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: hsla(224,52%,12%,.7);
+        z-index: -1;
+    }
+</style>
+<div class="container-fluid hero text-center">
+    <div class="bg-dimmer"></div>
+    <h1>{{ title }}</h1>
+    <p class="fw-light light-opacity">Learn about the people behind Zulip!</p>
+</div>
+<div class="container-fluid markdown-content p-4">
+    <div class="content-container team-page">
+                    <p>
+                        Over 500 people have contributed to the Zulip
+                        codebase, from high school students to 30 year
+                        industry veterans, from people launching new careers
+                        to people looking for community. Meet the team
+                        below!
+                    </p>
+
+                    <h1>The core team at Kandra Labs</h1>
+                    <div class="team-profiles container-fluid">
+                        <!-- Tim -->
+                        <div class="profile row">
+                            <div class="profile-picture col-md-3 m-auto mt-0">
+                                <img src="/images/tim.png" class="w-100" alt="" />
+                            </div>
+                            <div class="profile-information col-md-9">
+                                <h2 class="profile-name">Tim Abbott</h2>
+                                <p class="profile-role fw-light light-opacity">Founder and project leader</p>
+                                <div class="profile-description">
+                                    <p>
+                                        Before Zulip, Tim was a founder and CTO of
+                                        Ksplice, which provided rebootless linux
+                                        kernel updates (a feat many previously thought
+                                        impossible) to over 100,000 production
+                                        servers. He was also the youngest ever
+                                        Architect at Oracle, one of the most senior
+                                        engineers at Dropbox and has been active in
+                                        the open source community for over a
+                                        decade. Tim has three degrees from MIT, and
+                                        lives in San Francisco with his wife and
+                                        daughters.
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p>
+                        Kandra Labs provides commercial Zulip hosting and on-premises support
+                        at <a href="https://zulip.com/plans">https://zulip.com</a>,
+                        and employs the core developers of the project. It was
+                        started in June 2016 to help sustain the growth of the Zulip
+                        project. Kandra Labs is funded by
+                        an <a href="https://seedfund.nsf.gov/">SBIR grant</a> from
+                        the US National Science Foundation.
+                    </p>
+
+                    <!-- Contributors -->
+                    <h1>Our amazing community</h1>
+                    <p>
+                        While the team at Kandra Labs provides important
+                        leadership, Zulip is built by an incredible
+                        distributed community of developers from all
+                        around the world.  You can read about
+                        the <a href="/history">project's history</a> if
+                        you want to learn more about Zulip's origins.
+                    </p>
+                    <p>
+                        Here, we recognize the top contributors to the
+                        Zulip project on GitHub.  Zulip's community
+                        is unusual in how many people outside the core
+                        team have made major contributions to the project.
+                    </p>
+    </div>
+</div>
