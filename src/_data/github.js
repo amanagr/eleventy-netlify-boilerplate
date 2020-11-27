@@ -24,28 +24,32 @@ module.exports = async function () {
                 type: "json", // also supports "text" or "buffer"
             }
         );
-        repo_contributors_data[repo] = contributors;
+        repo_contributors_data[repo] = [];
 
         for (const contributor of contributors) {
             const username = contributor.login;
             if (!contributor_username_to_data[username]) {
                 contributor_username_to_data[username] = {};
             }
-
-            contributor_username_to_data[username][repo] = {
+            const minified_contributor = {
                 avatar_url: contributor.avatar_url,
                 username: username,
                 contributions: contributor.contributions,
                 profile: contributor.html_url,
             };
+
+            contributor_username_to_data[username][repo] = minified_contributor;
+            repo_contributors_data[repo].push(minified_contributor);
         }
     }
 
     repo_contributors_data["total"] = [];
     for (const username in contributor_username_to_data) {
-        contributor_username_to_data[username]["total"] = JSON.parse(JSON.stringify(Object.values(
-            contributor_username_to_data[username]
-        )[0])); // To make a deep copy
+        contributor_username_to_data[username]["total"] = JSON.parse(
+            JSON.stringify(
+                Object.values(contributor_username_to_data[username])[0]
+            )
+        ); // To make a deep copy
         contributor_username_to_data[username]["total"].contributions = 0;
         for (const repo of repo_names) {
             if (contributor_username_to_data[username][repo] != undefined) {
@@ -58,8 +62,21 @@ module.exports = async function () {
         );
     }
 
-    repo_contributors_data["total"].sort((a, b) => (a.contributions > b.contributions) ? -1 : 1)
+    repo_contributors_data["total"].sort((a, b) =>
+        a.contributions > b.contributions ? -1 : 1
+    );
+
+
+
+    // Get today's date
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+
+    today = yyyy + '/' + mm + '/' + dd;
     return {
         repo_contributors_data: repo_contributors_data,
+        date: today,
     };
 };

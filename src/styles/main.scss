@@ -593,4 +593,36 @@ nav.navbar {
             opacity: 1;
         }
     }
+
+    .tab-content {
+        margin-top: 10px;
+    }
+
+    .card {
+        transition: all 0.5s;
+        img {
+            width: 60px;
+            border-radius: 2px;
+        }
+        .avatar {
+            margin: auto;
+            text-align: center;
+        }
+        .card-body {
+            padding: 0.5rem;
+        }
+
+        &:hover, &:focus {
+            border-color: hsla(0, 0%, 0%, 0.5);
+        }
+    }
+
+    .profile-link {
+        text-decoration: none;
+        color: black;
+        &:hover {
+            text-decoration: none;
+            color: black;
+        }
+    }
 }

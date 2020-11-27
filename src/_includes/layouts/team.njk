@@ -48,6 +48,7 @@ layout: layouts/base.njk
     window.onload = function () {
         document.getElementById("total").classList.add("show");
         document.getElementById("total").classList.add("active");
+        document.getElementById("loading").classList.add("d-none");
     }
 </script>
 <div class="container-fluid hero text-center">
@@ -222,18 +223,38 @@ layout: layouts/base.njk
             </li>
         </ul>
         <div class="tab-content" id="myTabContent">
+            <div id="loading">Loading...</div>
             {% for repo, contributors in github.repo_contributors_data %}
-            <div
-                class="tab-pane fade"
-                id="{{ repo }}"
-                role="tabpanel"
-                aria-labelledby="{{ repo }}-tab"
-            >
-            {% for contributor in contributors %}
-                {{ contributor.contributions }}
+                <div
+                    class="tab-pane fade"
+                    id="{{ repo }}"
+                    role="tabpanel"
+                    aria-labelledby="{{ repo }}-tab"
+                >
+                    <div class="row row-cols-1 row-cols-md-3 g-2">
+                    {% for contributor in contributors %}
+                      <div class="col">
+                        <a class="profile-link" href="{{ contributor.profile }}">
+                        <div class="card " style="max-width: 540px;">
+                          <div class="row g-0">
+                            <div class="avatar col-4">
+                              <img src="{{ contributor.avatar_url }}"  alt="...">
+                            </div>
+                            <div class="col-8">
+                              <div class="card-body">
+                                <h6 class="card-title"><strong>@</strong><strong>{{ contributor.username }}</strong></h6>
+                                <p class="card-text">{{ contributor.contributions }} commits</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        </a>
+                    </div>
+                    {% endfor %}
+                    </div>
+                </div>
             {% endfor %}
-            </div>
-            {% endfor %}
+            <div class="last-update text-center mt-5">Last updated: {{ github.date }}</div>
             </div>
         </div>
     </div>
