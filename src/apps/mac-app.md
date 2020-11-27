@@ -5,10 +5,10 @@ platform: mac
 permalink: apps/mac.html
 app_heading: Zulip for macOS
 app_description: >-
-  Zulip on macOS is even better than Zulip on the web, with a cleaner look, tray
-  integration, native notifications, and support for multiple Zulip accounts.
+    Zulip on macOS is even better than Zulip on the web, with a cleaner look, tray
+    integration, native notifications, and support for multiple Zulip accounts.
 
 
-  For download instructions, go to the [desktop app install guide](https://zulip.com/help/desktop-app-install-guide).
+    For download instructions, go to the [desktop app install guide](https://zulip.com/help/desktop-app-install-guide).
 app_image: /images/macbook.png
 ---

@@ -4,33 +4,33 @@ const path = require("path");
 const fibers = require("fibers");
 
 const processSass = (src, dest) => {
-  return new Promise((resolve, reject) => {
-    sass.render(
-      {
-        file: src,
-        fiber: fibers,
-      },
-      (error, result) => {
-        if (error) reject(error);
-        resolve(result);
-        console.log(
-          `Writing ${dest} from ${result.stats.entry} in ${result.stats.duration}ms.`
+    return new Promise((resolve, reject) => {
+        sass.render(
+            {
+                file: src,
+                fiber: fibers,
+            },
+            (error, result) => {
+                if (error) reject(error);
+                resolve(result);
+                console.log(
+                    `Writing ${dest} from ${result.stats.entry} in ${result.stats.duration}ms.`
+                );
+            }
         );
-      }
-    );
-  });
+    });
 };
 
 module.exports = (scssPath, cssPath) => {
-  if (!fs.existsSync(path.dirname(cssPath))) {
-    Promise.all([
-      fs.mkdir(path.dirname(cssPath), { recursive: true }),
-      processSass(scssPath, cssPath),
-    ])
-      .then((result) => fs.writeFile(cssPath, result[1].css.toString()))
-      .catch((error) => console.error(error.stack));
-  }
-  processSass(scssPath, cssPath)
-    .then((result) => fs.writeFile(cssPath, result.css.toString()))
-    .catch((error) => console.error(error.stack));
+    if (!fs.existsSync(path.dirname(cssPath))) {
+        Promise.all([
+            fs.mkdir(path.dirname(cssPath), { recursive: true }),
+            processSass(scssPath, cssPath),
+        ])
+            .then((result) => fs.writeFile(cssPath, result[1].css.toString()))
+            .catch((error) => console.error(error.stack));
+    }
+    processSass(scssPath, cssPath)
+        .then((result) => fs.writeFile(cssPath, result.css.toString()))
+        .catch((error) => console.error(error.stack));
 };

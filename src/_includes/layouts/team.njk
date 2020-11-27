@@ -40,10 +40,16 @@ layout: layouts/base.njk
         height: 100%;
         top: 0;
         left: 0;
-        background-color: hsla(224,52%,12%,.7);
+        background-color: hsla(224, 52%, 12%, 0.7);
         z-index: -1;
     }
 </style>
+<script type="text/javascript">
+    window.onload = function () {
+        document.getElementById("total").classList.add("show");
+        document.getElementById("total").classList.add("active");
+    }
+</script>
 <div class="container-fluid hero text-center">
     <div class="bg-dimmer"></div>
     <h1>{{ title }}</h1>
@@ -51,114 +57,184 @@ layout: layouts/base.njk
 </div>
 <div class="container-fluid markdown-content p-4">
     <div class="content-container team-page">
-                    <p>
-                        Over 500 people have contributed to the Zulip
-                        codebase, from high school students to 30 year
-                        industry veterans, from people launching new careers
-                        to people looking for community. Meet the team
-                        below!
+        <p>
+            Over 500 people have contributed to the Zulip codebase, from high
+            school students to 30 year industry veterans, from people launching
+            new careers to people looking for community. Meet the team below!
+        </p>
+
+        <h1>The core team at Kandra Labs</h1>
+        <div class="team-profiles container-fluid">
+            <!-- Tim -->
+            <div class="profile row">
+                <div class="profile-picture col-md-3 m-auto mt-0">
+                    <img src="/images/tim.png" class="w-100" alt="" />
+                </div>
+                <div class="profile-information col-md-9">
+                    <h2 class="profile-name">Tim Abbott</h2>
+                    <p class="profile-role fw-light light-opacity">
+                        Founder and project leader
                     </p>
-
-                    <h1>The core team at Kandra Labs</h1>
-                    <div class="team-profiles container-fluid">
-                        <!-- Tim -->
-                        <div class="profile row">
-                            <div class="profile-picture col-md-3 m-auto mt-0">
-                                <img src="/images/tim.png" class="w-100" alt="" />
-                            </div>
-                            <div class="profile-information col-md-9">
-                                <h2 class="profile-name">Tim Abbott</h2>
-                                <p class="profile-role fw-light light-opacity">Founder and project leader</p>
-                                <div class="profile-description">
-                                    <p>
-                                        Before Zulip, Tim was a founder and CTO of
-                                        Ksplice, which provided rebootless linux
-                                        kernel updates (a feat many previously thought
-                                        impossible) to over 100,000 production
-                                        servers. He was also the youngest ever
-                                        Architect at Oracle, one of the most senior
-                                        engineers at Dropbox and has been active in
-                                        the open source community for over a
-                                        decade. Tim has three degrees from MIT, and
-                                        lives in San Francisco with his wife and
-                                        daughters.
-                                    </p>
-
-                                </div>
-                            </div>
-                        </div>
+                    <div class="profile-description">
+                        <p>
+                            Before Zulip, Tim was a founder and CTO of Ksplice,
+                            which provided rebootless linux kernel updates (a
+                            feat many previously thought impossible) to over
+                            100,000 production servers. He was also the youngest
+                            ever Architect at Oracle, one of the most senior
+                            engineers at Dropbox and has been active in the open
+                            source community for over a decade. Tim has three
+                            degrees from MIT, and lives in San Francisco with
+                            his wife and daughters.
+                        </p>
                     </div>
-                    <p>
-                        Kandra Labs provides commercial Zulip hosting and on-premises support
-                        at <a href="https://zulip.com/plans">https://zulip.com</a>,
-                        and employs the core developers of the project. It was
-                        started in June 2016 to help sustain the growth of the Zulip
-                        project. Kandra Labs is funded by
-                        an <a href="https://seedfund.nsf.gov/">SBIR grant</a> from
-                        the US National Science Foundation.
-                    </p>
+                </div>
+            </div>
+        </div>
+        <p>
+            Kandra Labs provides commercial Zulip hosting and on-premises
+            support at
+            <a href="https://zulip.com/plans">https://zulip.com</a>, and employs
+            the core developers of the project. It was started in June 2016 to
+            help sustain the growth of the Zulip project. Kandra Labs is funded
+            by an <a href="https://seedfund.nsf.gov/">SBIR grant</a> from the US
+            National Science Foundation.
+        </p>
 
-                    <!-- Contributors -->
-                    <h1>Our amazing community</h1>
-                    <p>
-                        While the team at Kandra Labs provides important
-                        leadership, Zulip is built by an incredible
-                        distributed community of developers from all
-                        around the world.  You can read about
-                        the <a href="/history">project's history</a> if
-                        you want to learn more about Zulip's origins.
-                    </p>
-                    <p>
-                        Here, we recognize the top contributors to the
-                        Zulip project on GitHub.  Zulip's community
-                        is unusual in how many people outside the core
-                        team have made major contributions to the project.
-                    </p>
-                    <ul class="nav nav-tabs" id="contribution-tab" role="tablist">
-                      <li class="nav-item" role="presentation">
-                        <a class="nav-link active" id="total-tab" data-toggle="tab" href="#total" role="tab" aria-controls="total" aria-selected="true"><i class="fa fa-globe" aria-hidden="true"></i>&nbsp; Total</a>
-                      </li>
-                      <li class="nav-item" role="presentation">
-                        <a class="nav-link" id="zulip-tab" data-toggle="tab" href="#zulip" role="tab" aria-controls="zulip" aria-selected="false"><i class="fa fa-server" aria-hidden="true"></i>&nbsp; Server</a>
-                      </li>
-                      <li class="nav-item" role="presentation">
-                        <a class="nav-link" id="zulip-desktop-tab" data-toggle="tab" href="#zulip-desktop" role="tab" aria-controls="zulip-desktop" aria-selected="false"><i class="fa fa-desktop" aria-hidden="true"></i>&nbsp; Desktop</a>
-                      </li>
-                      <li class="nav-item" role="presentation">
-                        <a class="nav-link" id="zulip-mobile-tab" data-toggle="tab" href="#zulip-mobile" role="tab" aria-controls="zulip-mobile" aria-selected="false"><i class="fa fa-mobile" aria-hidden="true"></i>&nbsp; Mobile</a>
-                      </li>
-                      <li class="nav-item" role="presentation">
-                        <a class="nav-link" id="python-zulip-api-tab" data-toggle="tab" href="#python-zulip-api" role="tab" aria-controls="python-zulip-api" aria-selected="false"><i class="fa fa-code" aria-hidden="true"></i>&nbsp; Python API</a>
-                      </li>
-                      <li class="nav-item" role="presentation">
-                        <a class="nav-link" id="zulip-js-tab" data-toggle="tab" href="#zulip-js" role="tab" aria-controls="zulip-js" aria-selected="false"><i class="fa fa-code" aria-hidden="true"></i>&nbsp; JS API</a>
-                      </li>
-                      <li class="nav-item" role="presentation">
-                        <a class="nav-link" id="zulipbot-tab" data-toggle="tab" href="#zulipbot" role="tab" aria-controls="zulipbot" aria-selected="false"><i class="fa fa-at" aria-hidden="true"></i>&nbsp; Zulipbot</a>
-                      </li>
-                      <li class="nav-item" role="presentation">
-                        <a class="nav-link" id="terminal-tab" data-toggle="tab" href="#terminal" role="tab" aria-controls="terminal" aria-selected="false"><i class="fa fa-terminal" aria-hidden="true"></i>&nbsp; Terminal</a>
-                      </li>
-                    </ul>
-                    <div class="tab-content" id="myTabContent">
-                      <div class="tab-pane fade show active" id="total" role="tabpanel" aria-labelledby="total-tab">
-                        {% for contributor in github.contributor_username_to_data %}
-                            <div class="card mb-3" style="max-width: 540px;">
-                              <div class="row g-0">
-                                <div class="col-4">
-                                </div>
-                                <div class="col-8">
-                                  <div class="card-body">
-                                    <h5 class="card-title">{{ contributor.zulip.username }}</h5>
-                                    <p class="card-text">{{ contributor.zulip.contributions }}</p>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                        {% endfor %}
-                      </div>
-                      <div class="tab-pane fade" id="zulip" role="tabpanel" aria-labelledby="zulip-tab">...</div>
-                      <div class="tab-pane fade" id="zulip-desktop" role="tabpanel" aria-labelledby="zulip-desktop-tab">...</div>
-                    </div>
+        <!-- Contributors -->
+        <h1>Our amazing community</h1>
+        <p>
+            While the team at Kandra Labs provides important leadership, Zulip
+            is built by an incredible distributed community of developers from
+            all around the world. You can read about the
+            <a href="/history">project's history</a> if you want to learn more
+            about Zulip's origins.
+        </p>
+        <p>
+            Here, we recognize the top contributors to the Zulip project on
+            GitHub. Zulip's community is unusual in how many people outside the
+            core team have made major contributions to the project.
+        </p>
+        <ul class="nav nav-tabs" id="contribution-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <a
+                    class="nav-link active"
+                    id="total-tab"
+                    data-toggle="tab"
+                    href="#total"
+                    role="tab"
+                    aria-controls="total"
+                    aria-selected="true"
+                    ><i class="fa fa-globe" aria-hidden="true"></i>&nbsp;
+                    Total</a
+                >
+            </li>
+            <li class="nav-item" role="presentation">
+                <a
+                    class="nav-link"
+                    id="zulip-tab"
+                    data-toggle="tab"
+                    href="#zulip"
+                    role="tab"
+                    aria-controls="zulip"
+                    aria-selected="false"
+                    ><i class="fa fa-server" aria-hidden="true"></i>&nbsp;
+                    Server</a
+                >
+            </li>
+            <li class="nav-item" role="presentation">
+                <a
+                    class="nav-link"
+                    id="zulip-desktop-tab"
+                    data-toggle="tab"
+                    href="#zulip-desktop"
+                    role="tab"
+                    aria-controls="zulip-desktop"
+                    aria-selected="false"
+                    ><i class="fa fa-desktop" aria-hidden="true"></i>&nbsp;
+                    Desktop</a
+                >
+            </li>
+            <li class="nav-item" role="presentation">
+                <a
+                    class="nav-link"
+                    id="zulip-mobile-tab"
+                    data-toggle="tab"
+                    href="#zulip-mobile"
+                    role="tab"
+                    aria-controls="zulip-mobile"
+                    aria-selected="false"
+                    ><i class="fa fa-mobile" aria-hidden="true"></i>&nbsp;
+                    Mobile</a
+                >
+            </li>
+            <li class="nav-item" role="presentation">
+                <a
+                    class="nav-link"
+                    id="python-zulip-api-tab"
+                    data-toggle="tab"
+                    href="#python-zulip-api"
+                    role="tab"
+                    aria-controls="python-zulip-api"
+                    aria-selected="false"
+                    ><i class="fa fa-code" aria-hidden="true"></i>&nbsp; Python
+                    API</a
+                >
+            </li>
+            <li class="nav-item" role="presentation">
+                <a
+                    class="nav-link"
+                    id="zulip-js-tab"
+                    data-toggle="tab"
+                    href="#zulip-js"
+                    role="tab"
+                    aria-controls="zulip-js"
+                    aria-selected="false"
+                    ><i class="fa fa-code" aria-hidden="true"></i>&nbsp; JS
+                    API</a
+                >
+            </li>
+            <li class="nav-item" role="presentation">
+                <a
+                    class="nav-link"
+                    id="zulipbot-tab"
+                    data-toggle="tab"
+                    href="#zulipbot"
+                    role="tab"
+                    aria-controls="zulipbot"
+                    aria-selected="false"
+                    ><i class="fa fa-at" aria-hidden="true"></i>&nbsp;
+                    Zulipbot</a
+                >
+            </li>
+            <li class="nav-item" role="presentation">
+                <a
+                    class="nav-link"
+                    id="zulip-terminal-tab"
+                    data-toggle="tab"
+                    href="#zulip-terminal"
+                    role="tab"
+                    aria-controls="zulip-terminal"
+                    aria-selected="false"
+                    ><i class="fa fa-terminal" aria-hidden="true"></i>&nbsp;
+                    Terminal</a
+                >
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            {% for repo, contributors in github.repo_contributors_data %}
+            <div
+                class="tab-pane fade"
+                id="{{ repo }}"
+                role="tabpanel"
+                aria-labelledby="{{ repo }}-tab"
+            >
+            {% for contributor in contributors %}
+                {{ contributor.contributions }}
+            {% endfor %}
+            </div>
+            {% endfor %}
+            </div>
+        </div>
     </div>
 </div>

@@ -1,6 +1,6 @@
 backend:
-  name: git-gateway
-  branch: master
+    name: git-gateway
+    branch: master
 
 # By default, saving a post in the CMS
 # interface pushes a commit directly to
@@ -13,215 +13,225 @@ backend:
 media_folder: "images"
 
 collections:
-  # Our pages e.g. Home
-  - name: "pages"
-    label: "Page"
-    folder: "src/pages"
-    create: true # Change to true to allow editors to create new pages
-    slug: "{{slug}}"
-    fields:
-      - {
-          label: "Layout",
-          name: "layout",
-          widget: "string",
-          default: "layouts/base.njk",
-        }
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Permalink", name: "permalink", widget: "string" }
-      - { label: "Hero heading", name: "hero_heading", widget: "string" }
-      - {
-          label: "Hero description",
-          name: "hero_description",
-          widget: "string",
-        }
-      - {
-          label: "Hero image",
-          name: "hero_image",
-          widget: "image",
-          default: "images/Homepage_Hero.svg",
-        }
-      - {
-          label: "Heading 1",
-          name: "heading1",
-          widget: "string",
-          required: false,
-        }
-      - {
-          label: "Description 1",
-          name: "description1",
-          widget: "string",
-          required: false,
-        }
-      - {
-          label: "Image 1",
-          name: "image1",
-          widget: "image",
-          default: "images/Homepage_Threading1.svg",
-          required: false,
-        }
-      - {
-          label: "Heading 2",
-          name: "heading2",
-          widget: "string",
-          required: false,
-        }
-      - {
-          label: "Description 2",
-          name: "description2",
-          widget: "string",
-          required: false,
-        }
-      - {
-          label: "Image 2",
-          name: "image2",
-          widget: "image",
-          default: "images/Homepage_Threading1.svg",
-          required: false,
-        }
-      - {
-          label: "Heading 3",
-          name: "heading3",
-          widget: "string",
-          required: false,
-        }
-      - {
-          label: "Description 3",
-          name: "description3",
-          widget: "string",
-          required: false,
-        }
-      - {
-          label: "Image 3",
-          name: "image3",
-          widget: "image",
-          default: "images/Homepage_Threading1.svg",
-          required: false,
-        }
-      - {
-          label: "Heading 4",
-          name: "heading4",
-          widget: "string",
-          required: false,
-        }
-      - {
-          label: "Description 4",
-          name: "description4",
-          widget: "string",
-          required: false,
-        }
-      - {
-          label: "Image 4",
-          name: "image4",
-          widget: "image",
-          default: "images/Homepage_Threading1.svg",
-          required: false,
-        }
+    # Our pages e.g. Home
+    - name: "pages"
+      label: "Page"
+      folder: "src/pages"
+      create: true # Change to true to allow editors to create new pages
+      slug: "{{slug}}"
+      fields:
+          - {
+                label: "Layout",
+                name: "layout",
+                widget: "string",
+                default: "layouts/base.njk",
+            }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Permalink", name: "permalink", widget: "string" }
+          - { label: "Hero heading", name: "hero_heading", widget: "string" }
+          - {
+                label: "Hero description",
+                name: "hero_description",
+                widget: "string",
+            }
+          - {
+                label: "Hero image",
+                name: "hero_image",
+                widget: "image",
+                default: "images/Homepage_Hero.svg",
+            }
+          - {
+                label: "Heading 1",
+                name: "heading1",
+                widget: "string",
+                required: false,
+            }
+          - {
+                label: "Description 1",
+                name: "description1",
+                widget: "string",
+                required: false,
+            }
+          - {
+                label: "Image 1",
+                name: "image1",
+                widget: "image",
+                default: "images/Homepage_Threading1.svg",
+                required: false,
+            }
+          - {
+                label: "Heading 2",
+                name: "heading2",
+                widget: "string",
+                required: false,
+            }
+          - {
+                label: "Description 2",
+                name: "description2",
+                widget: "string",
+                required: false,
+            }
+          - {
+                label: "Image 2",
+                name: "image2",
+                widget: "image",
+                default: "images/Homepage_Threading1.svg",
+                required: false,
+            }
+          - {
+                label: "Heading 3",
+                name: "heading3",
+                widget: "string",
+                required: false,
+            }
+          - {
+                label: "Description 3",
+                name: "description3",
+                widget: "string",
+                required: false,
+            }
+          - {
+                label: "Image 3",
+                name: "image3",
+                widget: "image",
+                default: "images/Homepage_Threading1.svg",
+                required: false,
+            }
+          - {
+                label: "Heading 4",
+                name: "heading4",
+                widget: "string",
+                required: false,
+            }
+          - {
+                label: "Description 4",
+                name: "description4",
+                widget: "string",
+                required: false,
+            }
+          - {
+                label: "Image 4",
+                name: "image4",
+                widget: "image",
+                default: "images/Homepage_Threading1.svg",
+                required: false,
+            }
 
-  - name: "testimonials"
-    label: "Testimonials"
-    identifier_field: "company"
-    folder: "src/data/testimonials"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "Author avatar", name: "image", widget: "image" }
-      - { label: "Author name", name: "author", widget: "text" }
-      - { label: "Author designation", name: "designation", widget: "text" }
-      - { label: "Company", name: "company", widget: "text" }
-      - { label: "Quote", name: "quote", widget: "text" }
-      - { label: "Tags", name: "tags", widget: "text", default: "testimonial" }
-      - {
-          label: "First active",
-          name: "active",
-          widget: "boolean",
-          default: false,
-        }
+    - name: "testimonials"
+      label: "Testimonials"
+      identifier_field: "company"
+      folder: "src/data/testimonials"
+      create: true
+      slug: "{{slug}}"
+      fields:
+          - { label: "Author avatar", name: "image", widget: "image" }
+          - { label: "Author name", name: "author", widget: "text" }
+          - { label: "Author designation", name: "designation", widget: "text" }
+          - { label: "Company", name: "company", widget: "text" }
+          - { label: "Quote", name: "quote", widget: "text" }
+          - {
+                label: "Tags",
+                name: "tags",
+                widget: "text",
+                default: "testimonial",
+            }
+          - {
+                label: "First active",
+                name: "active",
+                widget: "boolean",
+                default: false,
+            }
 
-  - name: "banner"
-    label: "Banner"
-    identifier_field: "slug"
-    folder: "src/data/banners"
-    create: true
-    slug: "{{fields.slug}}"
-    fields:
-      - { lable: "Slug", name: "slug", widget: "string" }
-      - { label: "Title", name: "title", widget: "markdown" }
-      - { label: "Show", name: "show", widget: "boolean", default: true }
-      - { label: "Tags", name: "tags", widget: "text", default: "banner" }
+    - name: "banner"
+      label: "Banner"
+      identifier_field: "slug"
+      folder: "src/data/banners"
+      create: true
+      slug: "{{fields.slug}}"
+      fields:
+          - { lable: "Slug", name: "slug", widget: "string" }
+          - { label: "Title", name: "title", widget: "markdown" }
+          - { label: "Show", name: "show", widget: "boolean", default: true }
+          - { label: "Tags", name: "tags", widget: "text", default: "banner" }
 
-  - name: "sub_features"
-    label: "Sub features"
-    folder: "src/data/sub_features"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Description", name: "description", widget: "text" }
-      - { label: "Tags", name: "tags", widget: "text", default: "sub_feature" }
-      - { label: "SVG", name: "svg", widget: "text" }
+    - name: "sub_features"
+      label: "Sub features"
+      folder: "src/data/sub_features"
+      create: true
+      slug: "{{slug}}"
+      fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - {
+                label: "Tags",
+                name: "tags",
+                widget: "text",
+                default: "sub_feature",
+            }
+          - { label: "SVG", name: "svg", widget: "text" }
 
-  - name: "features"
-    label: "Features"
-    folder: "src/data/features"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Position", name: "position", widget: "number", min: 1 }
-      - { label: "Tags", name: "tags", widget: "text", default: "feature" }
-      - { label: "Image", name: "image", widget: "image" }
-      - {
-          label: "Sub Features",
-          name: "sub_features",
-          widget: "relation",
-          collection: "sub_features",
-          search_fields: ["title"],
-          value_field: "title",
-          multiple: true,
-        }
-      - { label: "Description", name: "description", widget: "text" }
+    - name: "features"
+      label: "Features"
+      folder: "src/data/features"
+      create: true
+      slug: "{{slug}}"
+      fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Position", name: "position", widget: "number", min: 1 }
+          - { label: "Tags", name: "tags", widget: "text", default: "feature" }
+          - { label: "Image", name: "image", widget: "image" }
+          - {
+                label: "Sub Features",
+                name: "sub_features",
+                widget: "relation",
+                collection: "sub_features",
+                search_fields: ["title"],
+                value_field: "title",
+                multiple: true,
+            }
+          - { label: "Description", name: "description", widget: "text" }
 
-  # eg: security
-  # Format:
-  # * jumbotron image with text
-  # * Rest is content rendered in markdown
-  - name: "markdown_pages"
-    label: "Markdown Pages"
-    folder: "src/pages/markdown_pages"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - {
-          label: "Layout",
-          name: "layout",
-          widget: "string",
-          default: "layouts/markdown_page.njk",
-        }
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Hero image", name: "hero_image", widget: "string" }
-      - { label: "Description", name: "description", widget: "markdown" }
-      - { label: "Show", name: "show", widget: "boolean", default: true }
-      - { label: "Permalink", name: "permalink", widget: "string" }
+    # eg: security
+    # Format:
+    # * jumbotron image with text
+    # * Rest is content rendered in markdown
+    - name: "markdown_pages"
+      label: "Markdown Pages"
+      folder: "src/pages/markdown_pages"
+      create: true
+      slug: "{{slug}}"
+      fields:
+          - {
+                label: "Layout",
+                name: "layout",
+                widget: "string",
+                default: "layouts/markdown_page.njk",
+            }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Hero image", name: "hero_image", widget: "string" }
+          - { label: "Description", name: "description", widget: "markdown" }
+          - { label: "Show", name: "show", widget: "boolean", default: true }
+          - { label: "Permalink", name: "permalink", widget: "string" }
 
-  - name: "apps"
-    label: "Apps"
-    folder: "src/apps"
-    create: true # Change to true to allow editors to create new pages
-    slug: "{{slug}}"
-    fields:
-      - {
-          label: "Layout",
-          name: "layout",
-          widget: "string",
-          default: "layouts/apps.njk",
-        }
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Platform", name: "platform", widget: "string" }
-      - { label: "Permalink", name: "permalink", widget: "string" }
-      - { label: "App heading", name: "app_heading", widget: "string" }
-      - {
-          label: "App description",
-          name: "app_description",
-          widget: "markdown",
-        }
-      - { label: "App image", name: "app_image", widget: "image" }
+    - name: "apps"
+      label: "Apps"
+      folder: "src/apps"
+      create: true # Change to true to allow editors to create new pages
+      slug: "{{slug}}"
+      fields:
+          - {
+                label: "Layout",
+                name: "layout",
+                widget: "string",
+                default: "layouts/apps.njk",
+            }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Platform", name: "platform", widget: "string" }
+          - { label: "Permalink", name: "permalink", widget: "string" }
+          - { label: "App heading", name: "app_heading", widget: "string" }
+          - {
+                label: "App description",
+                name: "app_description",
+                widget: "markdown",
+            }
+          - { label: "App image", name: "app_image", widget: "image" }

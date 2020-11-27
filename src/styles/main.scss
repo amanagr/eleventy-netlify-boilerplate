@@ -8,574 +8,589 @@
 
 /* -- defaults -- */
 body {
-  background-color: $dark-blue;
-  color: hsl(0, 0%, 100%);
+    background-color: $dark-blue;
+    color: hsl(0, 0%, 100%);
 }
 
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 .bg-purple {
-  background-color: $purple;
+    background-color: $purple;
 }
 
 .light-opacity {
-  opacity: 0.7;
+    opacity: 0.7;
 }
 
 /* override bootstrap */
 
 .btn-primary {
-  padding: 8px 20px;
-  border-radius: 9px;
-  background-color: $light-green;
-  color: $dark-blue;
-  border-color: transparent;
-  white-space: nowrap;
-  transition: all 0.3s;
+    padding: 8px 20px;
+    border-radius: 9px;
+    background-color: $light-green;
+    color: $dark-blue;
+    border-color: transparent;
+    white-space: nowrap;
+    transition: all 0.3s;
 
-  &:hover,
-  &:focus {
-    color: $light-green;
-    background-color: $dark-blue;
-    border-color: $light-green;
-    box-shadow: unset;
-  }
+    &:hover,
+    &:focus {
+        color: $light-green;
+        background-color: $dark-blue;
+        border-color: $light-green;
+        box-shadow: unset;
+    }
 }
 
 .btn-secondary {
-  padding: 8px 20px;
-  border-radius: 9px;
-  color: $light-green !important;
-  background-color: $dark-blue !important;
-  border-color: $light-green;
-  white-space: nowrap;
-  transition: all 0.3s;
-  text-decoration: none !important;
-
-  &:hover,
-  &:focus {
-    background-color: $light-green !important;
-    color: $dark-blue !important;
-    border-color: transparent;
-    box-shadow: unset;
+    padding: 8px 20px;
+    border-radius: 9px;
+    color: $light-green !important;
+    background-color: $dark-blue !important;
+    border-color: $light-green;
+    white-space: nowrap;
+    transition: all 0.3s;
     text-decoration: none !important;
-  }
+
+    &:hover,
+    &:focus {
+        background-color: $light-green !important;
+        color: $dark-blue !important;
+        border-color: transparent;
+        box-shadow: unset;
+        text-decoration: none !important;
+    }
 }
 
 .banner {
-  background: $purple-blue-gradient-horizontal;
+    background: $purple-blue-gradient-horizontal;
 
-  a {
-    color: hsl(0, 0%, 100%);
-    text-decoration: underline;
-  }
+    a {
+        color: hsl(0, 0%, 100%);
+        text-decoration: underline;
+    }
 
-  p {
-    margin: auto;
-  }
+    p {
+        margin: auto;
+    }
 }
 
 .separator {
-  hr {
-    color: $purple;
-    height: 2px;
-    opacity: 1;
-  }
+    hr {
+        color: $purple;
+        height: 2px;
+        opacity: 1;
+    }
 }
 
 /* -- navbar styling -- */
 
 nav.navbar {
-  padding-top: 3rem !important;
+    padding-top: 3rem !important;
 
-  .navbar-brand {
-    img {
-      width: calc(8rem + 1vw);
+    .navbar-brand {
+        img {
+            width: calc(8rem + 1vw);
+        }
     }
-  }
 
-  .navbar-toggler:active {
-    background-color: inherit;
-  }
-
-  .nav-link {
-    color: hsl(0, 0%, 100%) !important;
-    padding-right: calc(2rem + 1vw) !important;
-
-    &:hover {
-      text-decoration: none;
-      background-color: inherit;
-      color: $purple !important;
+    .navbar-toggler:active {
+        background-color: inherit;
     }
-  }
 
-  @media (max-width: 992px) {
-    .nav-try-now {
-      display: none;
+    .nav-link {
+        color: hsl(0, 0%, 100%) !important;
+        padding-right: calc(2rem + 1vw) !important;
+
+        &:hover {
+            text-decoration: none;
+            background-color: inherit;
+            color: $purple !important;
+        }
     }
-  }
+
+    @media (max-width: 992px) {
+        .nav-try-now {
+            display: none;
+        }
+    }
 }
 
 /* navbar animations */
 @media (min-width: 992px) {
-  .dropdown-menu {
-    animation-duration: 0.3s;
-    animation-duration: 0.3s;
-    animation-fill-mode: both;
-    animation-fill-mode: both;
-  }
+    .dropdown-menu {
+        animation-duration: 0.3s;
+        animation-duration: 0.3s;
+        animation-fill-mode: both;
+        animation-fill-mode: both;
+    }
 
-  .dropdown-toggle::after {
-    content: none;
-  }
+    .dropdown-toggle::after {
+        content: none;
+    }
 
-  .nav-item:hover .dropdown-menu {
-    display: block;
-  }
+    .nav-item:hover .dropdown-menu {
+        display: block;
+    }
 }
 
 @keyframes slideIn {
-  0% {
-    transform: translateY(1rem);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  0% {
-    transform: translateY(1rem);
-    opacity: 0;
-  }
+    0% {
+        transform: translateY(1rem);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    0% {
+        transform: translateY(1rem);
+        opacity: 0;
+    }
 }
 
 @keyframes slideIn {
-  0% {
-    transform: transform;
-    -webkit-opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    -webkit-opacity: 1;
-  }
-  0% {
-    transform: translateY(1rem);
-    -webkit-opacity: 0;
-  }
+    0% {
+        transform: transform;
+        -webkit-opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        -webkit-opacity: 1;
+    }
+    0% {
+        transform: translateY(1rem);
+        -webkit-opacity: 0;
+    }
 }
 
 .dropdown-menu {
-  // So that the dropdown doesn't close when moving between button and dropdown
-  margin-top: 0;
+    // So that the dropdown doesn't close when moving between button and dropdown
+    margin-top: 0;
 
-  // Animation for dropdown menu.
-  animation-name: slideIn;
-  animation-name: slideIn;
+    // Animation for dropdown menu.
+    animation-name: slideIn;
+    animation-name: slideIn;
 }
 
 // style for home.njk
 .home_page {
-  img {
-    // Fixes img stretching to whole flex container
-    align-self: center;
-  }
-
-  .hero-try-now:hover {
-    background-color: hsl(155, 86%, 72%);
-    color: $dark-blue;
-    border-color: transparent;
-  }
-
-  .btn.watch-now svg {
-    position: relative;
-    top: -2px;
-  }
-
-  @media (max-width: 992px) {
-    .hero-try-now,
-    .watch-now {
-      width: 100%;
-      margin-bottom: 10px;
-    }
-  }
-
-  .introduction-video-section {
-    background: $purple-blue-gradient;
-    text-align: center;
-
-    .introduction-video {
-      width: 60%;
-      margin: auto;
-      padding: 3%;
-    }
-  }
-
-  .no-more-buried-messages {
-    background-image: url("../../images/Homepage_Threading2.svg");
-    background-repeat: no-repeat;
-    background-position: 0% 26%;
-  }
-
-  .apps-section {
-    background-color: $purple;
-    text-align: center;
-  }
-
-  @media (min-width: 992px) {
-    .integrations-section {
-      background-image: url("../../images/Homepage_Integration.svg");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-      .row {
-        height: 40vw;
-      }
-    }
-  }
-
-  .integrations-section {
-    .col-lg-6 {
-      align-self: center;
-    }
-  }
-
-  .testimonials {
-    background-color: $purple;
-
     img {
-      height: $home-testimonial-avatar-height;
+        // Fixes img stretching to whole flex container
+        align-self: center;
     }
 
-    .carousel-control {
-      span {
-        position: absolute;
-        top: calc(#{$home-testimonial-avatar-height} / 2);
-        bottom: unset;
-      }
-    }
-  }
-
-  .trusted-by {
-    h1 {
-      text-align: center;
-      color: $purple;
+    .hero-try-now:hover {
+        background-color: hsl(155, 86%, 72%);
+        color: $dark-blue;
+        border-color: transparent;
     }
 
-    .company-box {
-      display: block;
-      padding: 20px;
+    .btn.watch-now svg {
+        position: relative;
+        top: -2px;
+    }
 
-      .company {
-        display: inline-block;
-        width: 100%;
-        height: 60px;
-        background-size: contain;
-        background-position: center;
+    @media (max-width: 992px) {
+        .hero-try-now,
+        .watch-now {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    }
+
+    .introduction-video-section {
+        background: $purple-blue-gradient;
+        text-align: center;
+
+        .introduction-video {
+            width: 60%;
+            margin: auto;
+            padding: 3%;
+        }
+    }
+
+    .no-more-buried-messages {
+        background-image: url("../../images/Homepage_Threading2.svg");
         background-repeat: no-repeat;
-        margin: 10px 0 !important;
-      }
+        background-position: 0% 26%;
     }
-  }
 
-  .second-apps-section {
-    background-color: transparent;
-
-    h1 {
-      color: $purple;
+    .apps-section {
+        background-color: $purple;
+        text-align: center;
     }
-  }
+
+    @media (min-width: 992px) {
+        .integrations-section {
+            background-image: url("../../images/Homepage_Integration.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            .row {
+                height: 40vw;
+            }
+        }
+    }
+
+    .integrations-section {
+        .col-lg-6 {
+            align-self: center;
+        }
+    }
+
+    .testimonials {
+        background-color: $purple;
+
+        img {
+            height: $home-testimonial-avatar-height;
+        }
+
+        .carousel-control {
+            span {
+                position: absolute;
+                top: calc(#{$home-testimonial-avatar-height} / 2);
+                bottom: unset;
+            }
+        }
+    }
+
+    .trusted-by {
+        h1 {
+            text-align: center;
+            color: $purple;
+        }
+
+        .company-box {
+            display: block;
+            padding: 20px;
+
+            .company {
+                display: inline-block;
+                width: 100%;
+                height: 60px;
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                margin: 10px 0 !important;
+            }
+        }
+    }
+
+    .second-apps-section {
+        background-color: transparent;
+
+        h1 {
+            color: $purple;
+        }
+    }
 }
 
 /* -- company logos -- */
 .company-box .company.akamai {
-  background-image: url(../../images/logos/akamai.png);
-  background-color: transparent;
+    background-image: url(../../images/logos/akamai.png);
+    background-color: transparent;
 }
 
 .company-box .company.doctorondemand {
-  background-image: url(../../images/logos/doctorondemand.png);
-  background-color: transparent;
+    background-image: url(../../images/logos/doctorondemand.png);
+    background-color: transparent;
 }
 
 .company-box .company.layershift {
-  background-image: url(../../images/logos/layershift.png);
-  background-color: transparent;
+    background-image: url(../../images/logos/layershift.png);
+    background-color: transparent;
 }
 
 .company-box .company.recurse {
-  background-image: url(../../images/logos/recurse.png);
-  background-color: transparent;
+    background-image: url(../../images/logos/recurse.png);
+    background-color: transparent;
 }
 
 .company-box .company.solano {
-  background-image: url(../../images/logos/solano.png);
-  background-color: transparent;
+    background-image: url(../../images/logos/solano.png);
+    background-color: transparent;
 }
 
 .company-box .company.veelo {
-  background-image: url(../../images/logos/veelo.png);
-  background-color: transparent;
+    background-image: url(../../images/logos/veelo.png);
+    background-color: transparent;
 }
 
 .company-box .company.panjiva {
-  background-image: url(../../images/logos/panjiva.png);
-  background-color: transparent;
+    background-image: url(../../images/logos/panjiva.png);
+    background-color: transparent;
 }
 
 .company-box .company.cmt {
-  background-image: url(../../images/logos/cambridge-mobile-telematics.png);
-  background-color: transparent;
+    background-image: url(../../images/logos/cambridge-mobile-telematics.png);
+    background-color: transparent;
 }
 
 .company-box .company.levelup {
-  background-image: url(../../images/logos/levelup.png);
-  background-color: transparent;
+    background-image: url(../../images/logos/levelup.png);
+    background-color: transparent;
 }
 
 .company-box .company.wildfly {
-  background-image: url(../../images/logos/wildfly.png);
-  background-color: transparent;
+    background-image: url(../../images/logos/wildfly.png);
+    background-color: transparent;
 }
 
 .company-box .company.mariadb {
-  background-image: url(../../images/logos/mariadb.png);
-  background-color: transparent;
+    background-image: url(../../images/logos/mariadb.png);
+    background-color: transparent;
 }
 
 .company-box .company.infinispan {
-  background-image: url(../../images/logos/infinispan.png);
-  background-color: transparent;
-  height: 50px;
+    background-image: url(../../images/logos/infinispan.png);
+    background-color: transparent;
+    height: 50px;
 }
 
 .company-box .company.hail {
-  background-image: url(../../images/logos/hail.png);
-  background-color: transparent;
+    background-image: url(../../images/logos/hail.png);
+    background-color: transparent;
 }
 
 .company-box .company.inspire-hep {
-  background-image: url(../../images/logos/inspire-hep.png);
-  background-color: transparent;
+    background-image: url(../../images/logos/inspire-hep.png);
+    background-color: transparent;
 }
 
 .company-box .company.wikimedia-outreach {
-  background-image: url(../../images/logos/wikimedia-outreach.png);
-  background-color: transparent;
+    background-image: url(../../images/logos/wikimedia-outreach.png);
+    background-color: transparent;
 }
 
 .company-box .company.fhir {
-  background-image: url(../../images/logos/fhir.png);
-  background-color: transparent;
+    background-image: url(../../images/logos/fhir.png);
+    background-color: transparent;
 }
 
 .company-box .company.openshot {
-  background-image: url(../../images/logos/openshot.png);
-  background-color: transparent;
+    background-image: url(../../images/logos/openshot.png);
+    background-color: transparent;
 }
 
 .company-box .company.mixxx {
-  background-image: url(../../images/logos/mixxx.png);
-  background-color: transparent;
-  height: 45px;
+    background-image: url(../../images/logos/mixxx.png);
+    background-color: transparent;
+    height: 45px;
 }
 
 .landing-footer {
-  background-color: $dark-blue;
+    background-color: $dark-blue;
 
-  ul,
-  li,
-  h3 {
-    color: hsl(0, 0%, 100%);
-  }
-
-  a {
-    color: hsl(0, 0%, 100%);
-
-    &:hover {
-      text-decoration: none;
-      color: $purple;
+    ul,
+    li,
+    h3 {
+        color: hsl(0, 0%, 100%);
     }
-  }
+
+    a {
+        color: hsl(0, 0%, 100%);
+
+        &:hover {
+            text-decoration: none;
+            color: $purple;
+        }
+    }
 }
 
 .features_page {
-  img {
-    max-height: 450px;
-  }
-
-  .card {
-    background-color: transparent;
-    cursor: pointer;
-    transition: all 150ms ease;
-    border-width: 2px;
-    border-style: solid;
-    border-color: transparent;
-    border-radius: 5px;
-
-    .card-img-top {
-      svg {
-        color: $dark-blue;
-        width: 2em;
-        height: 2em;
-        margin: 1em;
-      }
+    img {
+        max-height: 450px;
     }
 
-    .card-title {
-      color: $dark-blue;
+    .card {
+        background-color: transparent;
+        cursor: pointer;
+        transition: all 150ms ease;
+        border-width: 2px;
+        border-style: solid;
+        border-color: transparent;
+        border-radius: 5px;
+
+        .card-img-top {
+            svg {
+                color: $dark-blue;
+                width: 2em;
+                height: 2em;
+                margin: 1em;
+            }
+        }
+
+        .card-title {
+            color: $dark-blue;
+        }
+
+        &:hover {
+            border-color: $dark-blue;
+            box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.25);
+            transform: translateY(-3px);
+        }
+
+        &.green {
+            .card-title {
+                color: $light-green;
+            }
+
+            svg {
+                color: $light-green;
+            }
+
+            &:hover {
+                border-color: $light-green;
+            }
+        }
     }
 
-    &:hover {
-      border-color: $dark-blue;
-      box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.25);
-      transform: translateY(-3px);
+    .apps-section {
+        h1 {
+            color: $purple;
+        }
     }
-
-    &.green {
-      .card-title {
-        color: $light-green;
-      }
-
-      svg {
-        color: $light-green;
-      }
-
-      &:hover {
-        border-color: $light-green;
-      }
-    }
-  }
-
-  .apps-section {
-    h1 {
-      color: $purple;
-    }
-  }
 }
 
 .community_page {
-  .ways_to_contribute {
-    background-color: $purple;
+    .ways_to_contribute {
+        background-color: $purple;
 
-    .card {
-      color: hsl(0, 0%, 100%);
-      background-color: $purple;
-      border: 0;
+        .card {
+            color: hsl(0, 0%, 100%);
+            background-color: $purple;
+            border: 0;
 
-      .img-col {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
+            .img-col {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
 
-      img {
-        max-height: 7em;
-        margin: auto;
-        display: block;
-      }
+            img {
+                max-height: 7em;
+                margin: auto;
+                display: block;
+            }
+        }
     }
-  }
 }
 
 .apps_page {
-  .underline-link,
-  #third-party-apps {
-    a {
-      color: white;
-      text-decoration: underline;
+    .underline-link,
+    #third-party-apps {
+        a {
+            color: white;
+            text-decoration: underline;
 
-      &:hover,
-      &:focus {
-        color: white;
-        text-decoration: underline;
-      }
+            &:hover,
+            &:focus {
+                color: white;
+                text-decoration: underline;
+            }
+        }
     }
-  }
-  .apps {
-    .icons {
-      font-size: 3rem;
-      color: hsla(210, 75%, 17%, 68%);
-      padding: 30px;
+    .apps {
+        .icons {
+            font-size: 3rem;
+            color: hsla(210, 75%, 17%, 68%);
+            padding: 30px;
 
-      &:hover,
-      &:focus {
-        color: $light-green;
-        opacity: 80%;
-      }
-    }
+            &:hover,
+            &:focus {
+                color: $light-green;
+                opacity: 80%;
+            }
+        }
 
-    @media (min-width: 768px) {
-      .icons::after {
-        content: attr(data-label);
-        display: block;
-        margin-top: 10px;
-        color: white;
-        font-size: 0.8rem;
-        font-family: sans-serif;
-        font-weight: 600;
-      }
+        @media (min-width: 768px) {
+            .icons::after {
+                content: attr(data-label);
+                display: block;
+                margin-top: 10px;
+                color: white;
+                font-size: 0.8rem;
+                font-family: sans-serif;
+                font-weight: 600;
+            }
+        }
     }
-  }
-  .download-buttons-section {
-    margin-bottom: 30px;
-  }
+    .download-buttons-section {
+        margin-bottom: 30px;
+    }
 }
 
 .download-from-google-play-store,
 .download-from-app-store,
 #download-android-apk {
-  display: none !important;
+    display: none !important;
 }
 
 .android,
 .ios {
-  #download-android-apk {
-    font-size: 0.7rem;
-    margin-left: 20px;
-    white-space: nowrap;
-  }
-  button.btn-secondary {
-    display: none !important;
-  }
-  .homepage_hero_img {
-    width: 250px;
-    margin: auto;
-  }
+    #download-android-apk {
+        font-size: 0.7rem;
+        margin-left: 20px;
+        white-space: nowrap;
+    }
+    button.btn-secondary {
+        display: none !important;
+    }
+    .homepage_hero_img {
+        width: 250px;
+        margin: auto;
+    }
 }
 
 .android {
-  .download-from-google-play-store,
-  #download-android-apk {
-    display: inline !important;
-  }
+    .download-from-google-play-store,
+    #download-android-apk {
+        display: inline !important;
+    }
 }
 
 .ios {
-  .download-from-app-store {
-    display: inline !important;
-  }
+    .download-from-app-store {
+        display: inline !important;
+    }
 }
 
 .team-page {
-  .team-profiles {
-    border-top: 1px solid #ededed;
-    padding-top: 10px;
-  }
-  .profile-picture {
-    max-width: 250px;
-
-    img {
-      border-radius: 5px;
-      margin-bottom: 10px;
+    .team-profiles {
+        border-top: 1px solid #ededed;
+        padding-top: 10px;
     }
-  }
+    .profile-picture {
+        max-width: 250px;
 
-  @media (max-width: 768px) {
-    .profile-name,
-    .profile-role {
-      text-align: center;
+        img {
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
     }
-  }
+
+    @media (max-width: 768px) {
+        .profile-name,
+        .profile-role {
+            text-align: center;
+        }
+    }
+
+    #contribution-tab {
+        font-size: 0.9rem;
+
+        .nav-link {
+            padding: 4px 11px;
+            color: black;
+            opacity: 0.8;
+        }
+
+        .nav-link.active {
+            color: #0d6efd;
+            opacity: 1;
+        }
+    }
 }
