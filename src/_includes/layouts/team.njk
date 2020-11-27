@@ -114,5 +114,51 @@ layout: layouts/base.njk
                         is unusual in how many people outside the core
                         team have made major contributions to the project.
                     </p>
+                    <ul class="nav nav-tabs" id="contribution-tab" role="tablist">
+                      <li class="nav-item" role="presentation">
+                        <a class="nav-link active" id="total-tab" data-toggle="tab" href="#total" role="tab" aria-controls="total" aria-selected="true"><i class="fa fa-globe" aria-hidden="true"></i>&nbsp; Total</a>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="zulip-tab" data-toggle="tab" href="#zulip" role="tab" aria-controls="zulip" aria-selected="false"><i class="fa fa-server" aria-hidden="true"></i>&nbsp; Server</a>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="zulip-desktop-tab" data-toggle="tab" href="#zulip-desktop" role="tab" aria-controls="zulip-desktop" aria-selected="false"><i class="fa fa-desktop" aria-hidden="true"></i>&nbsp; Desktop</a>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="zulip-mobile-tab" data-toggle="tab" href="#zulip-mobile" role="tab" aria-controls="zulip-mobile" aria-selected="false"><i class="fa fa-mobile" aria-hidden="true"></i>&nbsp; Mobile</a>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="python-zulip-api-tab" data-toggle="tab" href="#python-zulip-api" role="tab" aria-controls="python-zulip-api" aria-selected="false"><i class="fa fa-code" aria-hidden="true"></i>&nbsp; Python API</a>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="zulip-js-tab" data-toggle="tab" href="#zulip-js" role="tab" aria-controls="zulip-js" aria-selected="false"><i class="fa fa-code" aria-hidden="true"></i>&nbsp; JS API</a>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="zulipbot-tab" data-toggle="tab" href="#zulipbot" role="tab" aria-controls="zulipbot" aria-selected="false"><i class="fa fa-at" aria-hidden="true"></i>&nbsp; Zulipbot</a>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="terminal-tab" data-toggle="tab" href="#terminal" role="tab" aria-controls="terminal" aria-selected="false"><i class="fa fa-terminal" aria-hidden="true"></i>&nbsp; Terminal</a>
+                      </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                      <div class="tab-pane fade show active" id="total" role="tabpanel" aria-labelledby="total-tab">
+                        {% for contributor in github.contributor_username_to_data %}
+                            <div class="card mb-3" style="max-width: 540px;">
+                              <div class="row g-0">
+                                <div class="col-4">
+                                </div>
+                                <div class="col-8">
+                                  <div class="card-body">
+                                    <h5 class="card-title">{{ contributor.zulip.username }}</h5>
+                                    <p class="card-text">{{ contributor.zulip.contributions }}</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                        {% endfor %}
+                      </div>
+                      <div class="tab-pane fade" id="zulip" role="tabpanel" aria-labelledby="zulip-tab">...</div>
+                      <div class="tab-pane fade" id="zulip-desktop" role="tabpanel" aria-labelledby="zulip-desktop-tab">...</div>
+                    </div>
     </div>
 </div>

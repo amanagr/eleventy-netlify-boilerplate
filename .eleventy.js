@@ -1,5 +1,5 @@
-const sass = require('./build-process/sass-process');
-const minifyJs = require('./build-process/js-process');
+const sass = require("./build-process/sass-process");
+const minifyJs = require("./build-process/js-process");
 const markdownIt = require("markdown-it");
 
 module.exports = function (eleventyConfig) {
@@ -14,16 +14,16 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("images");
 
   // Sass pre-processing
-  eleventyConfig.on('beforeBuild', () => {
-    sass('./src/styles/main.scss', './_site/src/styles/main.css');
+  eleventyConfig.on("beforeBuild", () => {
+    sass("./src/styles/main.scss", "./_site/src/styles/main.css");
   });
-  eleventyConfig.addWatchTarget('./src/styles/*.scss')
+  eleventyConfig.addWatchTarget("./src/styles/*.scss");
 
   // Minify JS
-  eleventyConfig.on('beforeBuild', () => {
-    minifyJs('./src/js/main.js', './_site/src/js/main.js');
+  eleventyConfig.on("beforeBuild", () => {
+    minifyJs("./src/js/main.js", "./_site/src/js/main.js");
   });
-  eleventyConfig.addWatchTarget('./src/js/*.js')
+  eleventyConfig.addWatchTarget("./src/js/*.js");
 
   // Filters
   function sortByPosition(values) {
@@ -38,7 +38,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("sortByTitle", sortByTitle);
 
   const md = new markdownIt({
-    html: true
+    html: true,
   });
 
   eleventyConfig.addFilter("markdown", (content) => {
@@ -47,7 +47,7 @@ module.exports = function (eleventyConfig) {
 
   return {
     dir: {
-      input: 'src',
-    }
+      input: "src",
+    },
   };
 };
