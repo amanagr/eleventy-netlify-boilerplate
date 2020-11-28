@@ -16,6 +16,33 @@ a {
     text-decoration: none;
 }
 
+.color-gradient {
+  /* Fallback: Set a background color. */
+  background-color: $dark-blue;
+
+  /* Create the gradient. */
+  background-image: linear-gradient($purple, $light-blue);
+
+  /* Set the background size and repeat properties. */
+  background-size: 100%;
+  background-repeat: repeat;
+
+  /* Use the text as a mask for the background. */
+  /* This will show the gradient as a text color rather than element bg. */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+
+.color-green {
+    color: $light-green;
+}
+
+.color-dark-blue {
+    color: $dark-blue;
+}
+
 .bg-purple {
     background-color: $purple;
 }
@@ -623,6 +650,56 @@ nav.navbar {
         &:hover {
             text-decoration: none;
             color: black;
+        }
+    }
+}
+
+.pricing-page {
+    .pricing-header {
+        h1 {
+            font-weight: 1000;
+        }
+
+        h6 {
+            color: $light-green;
+        }
+    }
+
+    @media (max-width: 1400px) {
+        .pricing-header {
+            text-align: center;
+        }
+    }
+
+    .plan-box {
+        background-color: $purple;
+        min-height: 100px;
+        border-radius: 6px;
+        padding: 5px;
+
+        .plan-title {
+            padding-left: 30px;
+        }
+
+        .signup-button {
+            margin: 15px;
+        }
+    }
+
+    .desktop-top-features {
+        ul {
+            padding: 10px;
+
+            li {
+                list-style: none;
+                padding: 0;
+
+                p {
+                    border-bottom: 1px solid white;
+                    margin: 20px;
+                    padding-bottom: 20px;
+                }
+            }
         }
     }
 }
