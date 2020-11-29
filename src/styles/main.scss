@@ -673,33 +673,56 @@ nav.navbar {
 
     .plan-box {
         background-color: $purple;
-        min-height: 100px;
+        min-height: 100%;
         border-radius: 6px;
-        padding: 5px;
+        padding: 40px 30px 10px;
+        display: flex;
+        flex-direction: column;
 
         .plan-title {
-            padding-left: 30px;
-        }
+            display: flex;
+            flex-direction: column;
+            height: 120px;
 
-        .signup-button {
-            margin: 15px;
+            .price-detail {
+                font-size: 14px;
+            }
+
+            .title {
+                font-weight: 500;
+                color: $dark-blue;
+                font-size: 45px;
+            }
+
+            .price-sign {
+                font-size: 20px;
+                position: relative;
+                bottom: 17px;
+            }
         }
     }
 
     .desktop-top-features {
-        ul {
-            padding: 10px;
+        margin-top: auto;
+        display: flex;
+        flex-direction: column;
 
-            li {
-                list-style: none;
-                padding: 0;
+        .feature {
+            padding: 15px 5px 25px;
+            border-bottom: 1px solid #ccc;
+            height: 80px;
+            position: relative;
 
-                p {
-                    border-bottom: 1px solid white;
-                    margin: 20px;
-                    padding-bottom: 20px;
-                }
+            p {
+                position: absolute;
+                bottom: 0;
             }
         }
+    }
+
+    .asterisk-detail {
+        font-size: 12px;
+        font-style: italic;
+        height: 40px;
     }
 }
