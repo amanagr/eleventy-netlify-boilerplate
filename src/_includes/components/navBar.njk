@@ -12,9 +12,9 @@
                     <a aria-haspopup="true" aria-expanded="false" id="features-nav-dropdown" href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button">Features</a>
                     <div class="dropdown-menu" aria-labelledby="features-nav-dropdown" style="margin: 0px">
                         <a href="/features.html" class="dropdown-item">Overview</a>
-                        <a href="#action/3.2" class="dropdown-item">Integrations</a>
-                        <a href="#action/3.3" class="dropdown-item">Rest API</a>
-                        <a href="#action/3.3" class="dropdown-item">Security</a>
+                        <a href="{{ server_url }}/integrations" class="dropdown-item">Integrations</a>
+                        <a href="{{ server_url }}/api" class="dropdown-item">Rest API</a>
+                        <a href="/security.html" class="dropdown-item">Security</a>
                     </div>
                 </div>
                 <div class="dropdown nav-item">
@@ -36,7 +36,7 @@
                 </div>
                 <a href="#" data-rb-event-key="/apps" class="nav-link" onclick="redirect_to_app_platform()">Apps</a>
             </div>
-            <button type="button" class="btn btn-primary nav-try-now">Try Now</button>
+            <a href="{{ server_url }}/new" class="btn btn-primary nav-try-now">Try Now</a>
         </div>
     </div>
 </nav>

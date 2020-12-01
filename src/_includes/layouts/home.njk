@@ -11,7 +11,7 @@ layout: layouts/base.njk
                     {{ hero_description }}
                 </p>
                 <div class="mt-5 text-uppercase">
-                    <a href="" class="btn btn-primary hero-try-now">Try now</a>
+                    <a href="{{ server_url }}/new" class="btn btn-primary hero-try-now">Try now</a>
                     <a href="" class="btn btn-secondary watch-now">
                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-play-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path d="M11.596 8.697l-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
@@ -63,7 +63,7 @@ layout: layouts/base.njk
                     <h1> {{ heading3 }} </h1>
                     <p> {{ description3 }}</p>
                     <div class="mt-5">
-                        <a href="" class="btn btn-secondary text-uppercase">Join community</a>
+                        <a href="https://chat.zulip.org" class="btn btn-secondary text-uppercase">Join community</a>
                     </div>
                 </div>
             </div>
@@ -73,7 +73,7 @@ layout: layouts/base.njk
         <h1>Ready to get started?</h1>
         <h3>Apps for every platform</h3>
         <div class="mt-5">
-            <a href="" class="btn btn-primary text-uppercase apps-try-now">Try now</a>
+            <a href="{{ server_url }}/new" class="btn btn-primary text-uppercase apps-try-now">Try now</a>
         </div>
     </div>
     <div class="integrations-section container-fluid text-center px-5 py-5">
@@ -84,7 +84,7 @@ layout: layouts/base.njk
                     Zulip provides over 90 native integrations. Hundreds more are available through Hubot, Zapier, and IFTTT.
                 </p>
                 <div class="mt-4">
-                    <a href="/integrations" class="btn btn-primary text-uppercase">See all integrations</a>
+                    <a href="{{ server_url }}/integrations/" class="btn btn-primary text-uppercase">See all integrations</a>
                 </div>
             </div>
         </div>
@@ -160,13 +160,13 @@ layout: layouts/base.njk
                     <div class="company layershift"></div>
                 </div>
               </div>
-        </div> 
+        </div>
     </div>
     <div class="container-fluid apps-section second-apps-section py-5">
         <h1>Ready to get started?</h1>
         <h3>Apps for every platform</h3>
         <div class="mt-5">
-            <a href="" class="btn btn-primary text-uppercase">Try now</a>
+            <a href="{{ server_url }}/new" class="btn btn-primary text-uppercase">Try now</a>
         </div>
     </div>
     <div class="container separator">
