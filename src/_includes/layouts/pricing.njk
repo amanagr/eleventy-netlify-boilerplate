@@ -29,7 +29,7 @@ layout: layouts/base.njk
                                         <div class="feature">
                                             <p>No sysadmin work required</p>
                                         </div>
-                                        <div class="my-3 text-center">
+                                        <div class="my-3 text-center" id="lite_plan">
                                             <a href="{{ server_url }}" class="btn btn-primary w-100">Sign up for Lite</a>
                                         </div>
                                         <div class="asterisk-detail">
@@ -56,7 +56,7 @@ layout: layouts/base.njk
                                         <div class="feature">
                                             <p>Priority commercial support</p>
                                         </div>
-                                    <div class="my-3 text-center">
+                                    <div class="my-3 text-center" id="standard_plan">
                                         <a href="{{ server_url }}" class="btn btn-primary w-100 px-0"><span class="m-auto">Start 60 day free trial</span></a>
                                     </div>
                                     <div class="asterisk-detail">
@@ -251,3 +251,20 @@ layout: layouts/base.njk
     </div>
     </div>
 </div>
+
+<script>
+// NOTE: We need realm url here, not server_url
+const server_url = "{{ server_url }}"
+const urlParams = new URLSearchParams(window.location.search);
+const realm_plan_type = urlParams.get('realm_plan_type');
+const sponsorship_pending = urlParams.get('sponsorship_pending');
+const current_plan_html = '<a href="{{ server_url }}/upgrade" class="btn btn-primary w-100">Current Plan</a>';
+
+if (realm_plan_type == 2 || sponsorship_pending == 'true') {
+    document.getElementById("lite_plan").innerHTML = current_plan_html;
+} else if (['3', '4'].indexOf(realm_plan_type) !== -1) {
+    document.getElementById("standard_plan").innerHTML = current_plan_html;
+} else if (sponsorship_pending == 'true' && realm_plan_type !== '0') {
+    document.getElementById("standard_plan").innerHTML = '<a href="{{ server_url }}/billing" class="btn btn-primary w-100">Sponsorship Pending</a>';
+}
+</script>
