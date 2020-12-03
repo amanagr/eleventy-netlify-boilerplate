@@ -50,6 +50,10 @@ layout: layouts/base.njk
 </div>
 <div class="container-fluid markdown-content p-4">
 	<div class="content-container">
-		{{ description | markdown | safe }}
+		{% if description %}
+			{{ description | markdown | safe }}
+		{% else %}
+			{{ content | safe }}
+		{% endif %}
 	</div>
 </div>
