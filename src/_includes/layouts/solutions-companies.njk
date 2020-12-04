@@ -1,0 +1,48 @@
+---
+layout: layouts/markdown_page.njk
+---
+{{ markdown_open_source | markdown | safe }}
+
+<div class="testimonials container-fluid text-center">
+    <div class="container py-5">
+        <div class="wrapper-carousel-fix">
+            <!-- Carousel Wrapper -->
+            <div id="carousel-example-1" class="carousel no-flex testimonial-carousel slide carousel-fade" data-ride="carousel" data-interval="false">
+            <!--Slides-->
+            <div class="carousel-inner" role="listbox">
+                {%- for testimonial in collections.testimonial -%}
+                    {% if testimonial.data.open_source %}
+                    {% else %}
+                    <div class="carousel-item {% if testimonial.data.active %} active {% endif %}">
+                        <div class="testimonial">
+                            <!--Avatar-->
+                            <div class="avatar mx-auto mb-4">
+                                <img src="{{ testimonial.data.image }}" class="rounded-circle img-fluid" alt="author avatar">
+                            </div>
+                            <!--Content-->
+                            <p>
+                            <i class="fas fa-quote-left"></i> {{ testimonial.data.quote }}  </p>
+                            <h4 class="font-weight-bold">{{ testimonial.data.author }}</h4>
+                            <h6 class="font-weight-bold my-3">{{ testimonial.data.designation }} at {{ testimonial.data.company }}</h6>
+                        </div>
+                    </div>
+                    {% endif %}
+                {%- endfor -%}
+                <!--First slide-->
+            </div>
+            <!--Slides-->
+            <!--Controls-->
+            <a class="carousel-control-prev left carousel-control" href="#carousel-example-1" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </a>
+            <a class="carousel-control-next right carousel-control" href="#carousel-example-1" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </a>
+            <!--Controls-->
+            </div>
+            <!-- Carousel Wrapper -->
+        </div>
+    </div>
+</div>
