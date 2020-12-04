@@ -814,3 +814,22 @@ nav.navbar {
         margin-bottom: 15px;
     }
 }
+
+.markdown-content {
+    .markdown-image-center {
+        width: 500px;
+        margin: auto;
+        display: block;
+    }
+
+    blockquote {
+        border-left: 3px solid $purple;
+        padding: 20px;
+        padding-bottom: 5px;
+        color: hsla(0, 0%, 0%, 0.7);
+
+        p {
+            margin-bottom: 5px;
+        }
+    }
+}
