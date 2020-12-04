@@ -1,11 +1,6 @@
 ---
 layout: layouts/markdown_page.njk
 ---
-
-<div class="photo-description">
-    Grow your community with fun, thoughtful, and inclusive discussion.
-</div>
-
 {{ markdown_open_source | markdown | safe }}
 
 <div class="testimonials container-fluid text-center">
@@ -18,10 +13,6 @@ layout: layouts/markdown_page.njk
                 {%- for testimonial in collections.testimonial -%}
                     {% if testimonial.data.open_source %}
                     <div class="carousel-item {% if testimonial.data.open_source_active %} active {% endif %}">
-                    <script>
-                        console.log("{{testimonial.data.open_source}}")
-                    </script>
-
                         <div class="testimonial">
                             <!--Avatar-->
                             <div class="avatar mx-auto mb-4">
