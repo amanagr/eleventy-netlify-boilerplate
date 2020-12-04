@@ -832,4 +832,20 @@ nav.navbar {
             margin-bottom: 5px;
         }
     }
+
+    .testimonials {
+        img {
+            height: $home-testimonial-avatar-height;
+        }
+        .carousel-control {
+            span {
+                position: absolute;
+                top: calc(200px / 2);
+                bottom: unset;
+                background-color: $light-blue;
+                border-radius: 30px;
+                border: 4px solid $light-blue;
+            }
+        }
+    }
 }
