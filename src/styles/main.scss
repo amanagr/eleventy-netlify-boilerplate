@@ -47,6 +47,15 @@ a {
     background-color: $purple;
 }
 
+.bg-green {
+    background-color: $light-green;
+    color: $dark-blue;
+
+    .btn-primary {
+        border-color: $dark-blue;
+    }
+}
+
 .light-opacity {
     opacity: 0.7;
 }

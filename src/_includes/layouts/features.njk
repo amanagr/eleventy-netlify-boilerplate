@@ -17,7 +17,7 @@ layout: layouts/base.njk
     </div>
     {%- for feature in collections.feature | sortByPosition -%}
         {%- if feature.data.position % 2 -%}
-        <div class="container-fluid p-5">
+        <div class="container-fluid bg-{{ feature.data.color }} p-5">
         <div class="container">
             <div class="row">
                 <img class="col-lg-6" src="{{ feature.data.image }}" />
@@ -29,7 +29,7 @@ layout: layouts/base.njk
                     </div>
                 </div>
         {%- else -%}
-        <div class="container-fluid bg-purple p-5">
+        <div class="container-fluid bg-{{ feature.data.color }} p-5">
         <div class="container">
             <div class="row">
                 <img class="col d-lg-none" src="{{ feature.data.image }}" />

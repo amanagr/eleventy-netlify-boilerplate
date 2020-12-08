@@ -189,6 +189,7 @@ collections:
                 value_field: "title",
                 multiple: true,
             }
+          - { label: "Background color", name: "color", widget: "text" }
           - { label: "Description", name: "description", widget: "text" }
 
     # eg: security
