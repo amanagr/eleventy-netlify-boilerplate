@@ -78,5 +78,5 @@ markdown_open_source: >
     invitations by email.
 
 show: true
-permalink: /solutions/companies.html
+permalink: /solutions/enterprise.html
 ---
