@@ -1,5 +1,5 @@
 ---
-image: /images/andy-ellis.png
+image: images/andy-ellis.png
 author: Andy Ellis
 designation: Chief Security Officer
 company: Akamai

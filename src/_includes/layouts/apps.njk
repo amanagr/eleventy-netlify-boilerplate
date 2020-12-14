@@ -1,6 +1,8 @@
 ---
 layout: layouts/base.njk
 ---
+<!-- Font Awesome Free icons, registered under amanagr@zulip.com -->
+<script src="https://kit.fontawesome.com/c93fdfe998.js" crossorigin="anonymous"></script>
 
 <div class="home_page apps_page text-center text-lg-left {{platform}}">
     <div class="container py-5">
@@ -17,12 +19,14 @@ layout: layouts/base.njk
   <path fill-rule="evenodd" d="M7.646 15.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 14.293V5.5a.5.5 0 0 0-1 0v8.793l-2.146-2.147a.5.5 0 0 0-.708.708l3 3z"/>
 </svg>                       Download
                     </button>
-                    <a class="download-from-google-play-store" hidden="" href="https://play.google.com/store/apps/details?id=com.zulipmobile"><img src="/images/google-play-badge.png" alt=""></a>
+                    <a class="download-from-google-play-store" hidden="" href="https://play.google.com/store/apps/details?id=com.zulipmobile"><img src="/images/google-play-badge.png" alt="Google play badge"></a>
                     <a id="download-android-apk" href="https://github.com/zulip/zulip-mobile/releases/latest/download/app-release.apk">or manually download APK</a>
-                    <a class="download-from-app-store" hidden="" href="https://itunes.apple.com/us/app/zulip/id1203036395"><img src="/images/app-store-badge.svg" alt=""></a>
+                    <a class="download-from-app-store" hidden="" href="https://itunes.apple.com/us/app/zulip/id1203036395"><img src="/images/app-store-badge.svg" alt="Apple store badge"></a>
                 </div>
             </div>
-            <img class="homepage_hero_img col-lg-7" src="{{ app_image }}" />
+            <div class="col-lg-7 apps_image_container">
+                {% Image app_image, "Preview of Zulip app",  "homepage_hero_img" %}
+            </div>
         </div>
     </div>
     <div class="container-fluid apps-section py-5">

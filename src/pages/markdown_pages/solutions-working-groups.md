@@ -2,7 +2,7 @@
 layout: layouts/markdown_page.njk
 title: The best chat for working groups and communities
 sub_title: Make good use of your users’ time, and engage your community with thoughtful, organized discussion.
-hero_image: /images/pycon.jpg
+hero_image: images/pycon.jpg
 description: >
     Part-time organizations like learning communities, standards bodies,
     advocacy groups, hobby groups, and alumni organizations often need different

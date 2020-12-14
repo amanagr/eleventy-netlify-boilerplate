@@ -12,7 +12,9 @@ layout: layouts/base.njk
                     <a href="" class="btn btn-secondary text-uppercase">Learn more</a>
                 </div>
             </div>
-            <img class="col-lg-6" src="{{ hero_image }}" />
+            <div class="col-lg-6">
+                {% Image hero_image, "Features hero image" %}
+            </div>
         </div>
     </div>
     {%- for feature in collections.feature | sortByPosition -%}
@@ -20,7 +22,9 @@ layout: layouts/base.njk
         <div class="container-fluid bg-{{ feature.data.color }} p-5">
         <div class="container">
             <div class="row">
-                <img class="col-lg-6" src="{{ feature.data.image }}" />
+                <div class="col-lg-6 text-center">
+                    {% Image feature.data.image, feature.data.title %}
+                </div>
                 <div class="col-lg-6 m-auto p-4">
                     <h1> {{ feature.data.title  | capitalize }} </h1>
                     <p> {{ feature.data.description }}</p>
@@ -32,14 +36,18 @@ layout: layouts/base.njk
         <div class="container-fluid bg-{{ feature.data.color }} p-5">
         <div class="container">
             <div class="row">
-                <img class="col d-lg-none" src="{{ feature.data.image }}" />
+                <div class="col d-lg-none text-center">
+                    {% Image feature.data.image, feature.data.title %}
+                </div>
                 <div class="col-lg-4 m-auto p-4">
                     <h1> {{ feature.data.title | capitalize }} </h1>
                     <p> {{ feature.data.description }}</p>
                     <div class="mt-5">
                         <a href="#{{ feature.data.title | slug }}" class="btn btn-primary text-uppercase" data-toggle="collapse">View features</a>
                     </div> </div>
-                <img class="col-lg-8 d-none d-lg-block" src="{{ feature.data.image }}" />
+                <div class="col-lg-8 d-none d-lg-block text-center">
+                    {% Image feature.data.image, feature.data.title %}
+                </div>
         {%- endif -%}
             </div>
             <div id="{{ feature.data.title | slug }}" class="row row-cols-1 row-cols-md-2 g-4 py-5 collapse">

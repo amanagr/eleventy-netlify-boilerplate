@@ -7,7 +7,7 @@ hero_heading: Join the Zulip community
 hero_description: Connect with over 600 code contributors and get support from open source-ers around the world.
 heading1: Write Documentation
 description1: Help us create new and updated articles and tutorials. Your work could be downloaded by thousands.
-image1: /images/CommunityPage_book.svg
+image1: images/CommunityPage_book.svg
 heading2: Write Blog Post
 description2: Write or suggest a post about your Zulip experience. Did it save you time and hassle? That's worth sharing.
 image2: images/CommunityPage_doc.svg

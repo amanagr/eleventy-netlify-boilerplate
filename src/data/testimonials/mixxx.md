@@ -1,5 +1,5 @@
 ---
-image: /images/RJ_Ryan.jpeg
+image: images/RJ_Ryan.jpeg
 author: RJ Ryan
 designation: Developer
 company: Mixxx

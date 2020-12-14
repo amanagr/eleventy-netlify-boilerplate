@@ -2,7 +2,7 @@
 layout: layouts/solutions-open-source.njk
 title: Zulip for open source
 sub_title: Grow your community with fun, thoughtful, and inclusive discussion.
-hero_image: /images/pycon.jpg
+hero_image: images/pycon.jpg
 markdown_open_source: >
     The Zulip core developers have decades of combined experience leading
     and growing open source communities. We use Zulip to fashion the

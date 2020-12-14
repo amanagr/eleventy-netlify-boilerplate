@@ -2,6 +2,9 @@
 layout: layouts/base.njk
 ---
 
+<!-- Font Awesome Free icons, registered under amanagr@zulip.com -->
+<script src="https://kit.fontawesome.com/c93fdfe998.js" crossorigin="anonymous"></script>
+
 <div class="home_page text-center text-lg-left">
     <div class="container py-5">
         <div class="row hero-row">
@@ -20,16 +23,20 @@ layout: layouts/base.njk
                     </a>
                 </div>
             </div>
-            <img class="homepage_hero_img col-lg-7" src="{{ hero_image }}" />
+            <div class="col-lg-7">
+                {% Image hero_image, "Preview of Zulip apps",  "homepage_hero_img" %}
+            </div>
         </div>
     </div>
     <div class="introduction-video-section">
-        <img class="introduction-video" src="images/landing-video.png">
+        {% Image "./images/landing-video.png", "introduction video",  "introduction-video" %}
     </div>
     <div class="container-fluid no-more-buried-messages py-4">
         <div class="container">
             <div class="row">
-                <img class="col-lg-6" src="{{ image1 }}" />
+                <div class="col-lg-6">
+                    {% Image image1, heading1 %}
+                </div>
                 <div class="col-lg-6 m-auto">
                     <h1> {{ heading1 }} </h1>
                     <p> {{ description1 }}</p>
@@ -43,7 +50,9 @@ layout: layouts/base.njk
     <div class="container-fluid asynchronous-conversations py-4">
         <div class="container">
             <div class="row">
-                <img class="col d-lg-none" src="{{ image2 }}" />
+                <div class="col d-lg-none">
+                    {% Image image2, heading2 %}
+                </div>
                 <div class="col-lg-4 m-auto">
                     <h1> {{ heading2 }} </h1>
                     <p> {{ description2 }}</p>
@@ -51,14 +60,18 @@ layout: layouts/base.njk
                         <a href="" class="btn btn-secondary text-uppercase">See more</a>
                     </div>
                 </div>
-                <img class="col-lg-8 d-none d-lg-block" src="{{ image2 }}" />
+                <div class="col-lg-8 d-none d-lg-block">
+                    {% Image image2, heading2 %}
+                </div>
             </div>
         </div>
     </div>
     <div class="container-fluid open-source py-4">
         <div class="container">
             <div class="row">
-                <img class="col-lg-6" src="{{ image3 }}" />
+                <div class="col-lg-6">
+                    {% Image image3, heading3 %}
+                </div>
                 <div class="col-lg-6 m-auto">
                     <h1> {{ heading3 }} </h1>
                     <p> {{ description3 }}</p>
@@ -101,7 +114,7 @@ layout: layouts/base.njk
                             <div class="testimonial">
                                 <!--Avatar-->
                                 <div class="avatar mx-auto mb-4">
-                                    <img src="{{ testimonial.data.image }}" class="rounded-circle img-fluid" alt="author avatar">
+                                    {% Image testimonial.data.image, "Author avatar", "rounded-circle img-fluid" %}
                                 </div>
                                 <!--Content-->
                                 <p>

@@ -2,7 +2,7 @@
 layout: layouts/solutions-research.njk
 title: Zulip for researchers
 sub_title: Modern team chat with native LaTeX support. Free for academic research.
-hero_image: /images/pycon.jpg
+hero_image: images/pycon.jpg
 markdown_open_source: >
     Zulip is designed to facilitate the collaboration of thoughtful people
     all around the world working on difficult problems, which perhaps

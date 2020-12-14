@@ -1,5 +1,5 @@
 ---
-image: /images/Srishti_Sethi.jpeg
+image: images/Srishti_Sethi.jpeg
 author: Srishti Sethi
 designation: Developer Advocate
 company: Wikimedia Foundation

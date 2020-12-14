@@ -10,5 +10,5 @@ app_description: >-
 
 
     For download instructions, go to the [desktop app install guide](https://zulip.com/help/desktop-app-install-guide).
-app_image: /images/macbook.png
+app_image: images/macbook.png
 ---

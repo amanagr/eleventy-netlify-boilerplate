@@ -2,7 +2,7 @@
 title: Management
 position: 6
 tags: feature
-image: /images/FeaturesPage_Management.svg
+image: images/FeaturesPage_Management.svg
 sub_features:
   - FULL-TEXT FULL-HISTORY SEARCH
 color: purple

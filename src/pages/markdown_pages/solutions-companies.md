@@ -2,7 +2,7 @@
 layout: layouts/solutions-companies.njk
 title: The best chat for workplaces
 sub_title: Make better use of your managers’ time, integrate your remote workers, and replace your low-content meetings.
-hero_image: /images/pycon.jpg
+hero_image: images/pycon.jpg
 markdown_open_source: >
     Zulip’s threading allows asynchronous discussion to happen over chat, which
     completely changes what chat can be used for in a company. Zulip’s threading

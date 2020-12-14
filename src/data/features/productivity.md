@@ -2,7 +2,7 @@
 title: Productivity
 position: 2
 tags: feature
-image: /images/featurespage_productivity.svg
+image: images/featurespage_productivity.svg
 sub_features:
     - Analytics
     - "FULL-TEXT FULL-HISTORY SEARCH"

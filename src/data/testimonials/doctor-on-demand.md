@@ -1,6 +1,6 @@
 ---
 tags: testimonial
-image: /images/jacinda-shelly.jpg
+image: images/jacinda-shelly.jpg
 author: Jacinda Shelly
 designation: CTO
 company: Doctor On Demand
