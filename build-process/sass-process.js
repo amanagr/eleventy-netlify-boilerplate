@@ -9,6 +9,7 @@ const processSass = (src, dest) => {
             {
                 file: src,
                 fiber: fibers,
+                outputStyle: "compressed",
             },
             (error, result) => {
                 if (error) reject(error);
