@@ -2,6 +2,10 @@ const sass = require("./build-process/sass-process");
 const minifyJs = require("./build-process/js-process");
 const markdownIt = require("markdown-it");
 const Image = require("@11ty/eleventy-img");
+const compress_images = require("compress-images");
+
+const INPUT_path_to_your_images = "./images/**/*.{jpg,JPG,jpeg,JPEG,png,svg}";
+const OUTPUT_path = "_site/images/";
 
 module.exports = function (eleventyConfig) {
     // Eleventy doesn't watch changes in files / folders mentioned
@@ -12,7 +16,20 @@ module.exports = function (eleventyConfig) {
     // Copy complete directories to _site folder so that they
     // are available to be rendered.
     eleventyConfig.addPassthroughCopy("src/admin");
-    eleventyConfig.addPassthroughCopy("images");
+    eleventyConfig.on("beforeBuild", () => {
+      compress_images(INPUT_path_to_your_images, OUTPUT_path, { compress_force: false, statistic: true, autoupdate: true }, false,
+        { jpg: { engine: "mozjpeg", command: ["-quality", "60"] } },
+        { png: { engine: "pngquant", command: ["--quality=20-50", "-o"] } },
+        { svg: { engine: "svgo", command: "--multipass" } },
+        {gif: { engine: false, command: false } },
+          function (error, completed, statistic) {
+          // console.log("-------------");
+          // console.log(error);
+          // console.log(completed);
+          // console.log(statistic);
+          // console.log("-------------");
+        });
+    });
 
     // Sass pre-processing
     eleventyConfig.on("beforeBuild", () => {
