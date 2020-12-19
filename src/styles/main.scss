@@ -158,6 +158,10 @@ a {
 nav.navbar {
     padding-top: 3rem !important;
 
+	.navbar-nav {
+		margin-left: auto;
+	}
+
     .navbar-brand {
         img {
             width: calc(8rem + 1vw);
