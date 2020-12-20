@@ -1,5 +1,7 @@
 "use strict";
 
+import 'bootstrap';
+
 function go_to_app_download_link(platform) {
     var request = new Request(
         "https://api.github.com/repos/zulip/zulip-desktop/releases",

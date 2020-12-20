@@ -13,7 +13,7 @@ layout: layouts/base.njk
                 </div>
             </div>
             <div class="col-lg-6">
-                {% Image hero_image, "Features hero image" %}
+                {% image hero_image, "Features hero image" %}
             </div>
         </div>
     </div>
@@ -23,7 +23,7 @@ layout: layouts/base.njk
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 text-center">
-                    {% Image feature.data.image, feature.data.title %}
+                    {% image feature.data.image, feature.data.title %}
                 </div>
                 <div class="col-lg-6 m-auto p-4">
                     <h1> {{ feature.data.title  | capitalize }} </h1>
@@ -37,7 +37,7 @@ layout: layouts/base.njk
         <div class="container">
             <div class="row">
                 <div class="col d-lg-none text-center">
-                    {% Image feature.data.image, feature.data.title %}
+                    {% image feature.data.image, feature.data.title %}
                 </div>
                 <div class="col-lg-4 m-auto p-4">
                     <h1> {{ feature.data.title | capitalize }} </h1>
@@ -46,7 +46,7 @@ layout: layouts/base.njk
                         <a href="#{{ feature.data.title | slug }}" class="btn btn-primary text-uppercase" data-toggle="collapse">View features</a>
                     </div> </div>
                 <div class="col-lg-8 d-none d-lg-block text-center">
-                    {% Image feature.data.image, feature.data.title %}
+                    {% image feature.data.image, feature.data.title %}
                 </div>
         {%- endif -%}
             </div>

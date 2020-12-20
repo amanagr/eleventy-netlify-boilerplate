@@ -6,23 +6,26 @@ hosted_domain: https://netlify-home.zulipdev.org
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link id="favicon" rel="icon" href="assets/images/favicon.svg">
 <!-- CSS only -->
-<link rel="stylesheet" href="{{ '/src/styles/main.css' | url }}">
+<link rel="stylesheet" href="{% webpack 'main.css' %}">
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width initial-scale=1">
-<title>{{ title }}</title>
+<title>{% if title %}{{ title }} · {{ site.title }}{% else %}{{ site.title or site.name}}{% endif %}</title>
 <meta name="author" content="Zulip open source project">
 <meta name="description" content="Zulip Team Chat">
+{# Open graph related #}
 <meta property="og:title" content="{{ title }}">
 <meta property="og:type" content="website">
 <meta property="og:description" content="Zulip Team Chat">
 <meta property="og:url" content="{{ hosted_domain }}">
 <meta property="og:img" content="https://pbs.twimg.com/profile_images/1283653931877335045/ph9KpX9k_400x400.jpg">
 <meta property="og:img:alt" content="Zulip logo">
+{# twitter related #}
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@zulip">
 <meta name="twitter:title" content="{{ title }}">
@@ -55,9 +58,7 @@ hosted_domain: https://netlify-home.zulipdev.org
     });
   }
 </script>
-<!-- Bootstrap JavaScript Bundle with Popper.js -->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-beta1/js/bootstrap.bundle.min.js" integrity="sha384-BOsAfwzjNJHrJ8cZidOg56tcQWfp6y72vEJ8xQ9w6Quywb24iOsW913URv1IS4GD" crossorigin="anonymous"></script>
 <!-- Custom JavaScript -->
-<script src="{{ '/src/js/main.js' | url }}"></script>
+<script async defer src="{% webpack 'main.js' %}"></script>
 <script>{{ js | safe }}</script>
 </html>

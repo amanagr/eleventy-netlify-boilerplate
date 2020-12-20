@@ -1,47 +1,64 @@
-const sass = require("./build-process/sass-process");
-const minifyJs = require("./build-process/js-process");
 const markdownIt = require("markdown-it");
-const Image = require("@11ty/eleventy-img");
-const compress_images = require("compress-images");
+const fs = require('fs');
+const path = require('path');
+const yaml = require('js-yaml');
+const ErrorOverlayPlugin = require('eleventy-plugin-error-overlay');
 
-const INPUT_path_to_your_images = "./images/**/*.{jpg,JPG,jpeg,JPEG,png,svg}";
-const OUTPUT_path = "_site/images/";
+const shortcodes = require('./utils/shortcodes');
+const transforms = require('./utils/transforms');
 
-module.exports = function (eleventyConfig) {
+module.exports = function (config) {
+	const manifestPath = path.resolve(__dirname, '_site/assets/manifest.json');
+
+	// Allow eleventy to understand yaml files
+	config.addDataExtension('yml', (contents) => yaml.safeLoad(contents));
+
+	// Shows error name, message, and fancy stacktrace
+	config.addPlugin(ErrorOverlayPlugin);
+
+	// Transforms
+	Object.keys(transforms).forEach((key) => {
+		config.addTransform(key, transforms[key]);
+	});
+
+	// Shortcodes
+	config.addShortcode('icon', shortcodes.icon);
+	config.addNunjucksAsyncShortcode('image', shortcodes.image);
+	config.addNunjucksAsyncShortcode('webpack', shortcodes.webpack);
+
+	// Pass-through files
+    // Copy complete directories to _site folder so that they
+    // are available to be rendered.
+    config.addPassthroughCopy("src/admin");
+	config.addPassthroughCopy('src/_headers');
+	config.addPassthroughCopy({'images/favicon.svg' : 'assets/images/favicon.svg'});
+	// Everything inside static is copied verbatim to `_site`
+	config.addPassthroughCopy('src/assets/static');
+
+	// BrowserSync Overrides
+	config.setBrowserSyncConfig({
+		...config.browserSyncConfig,
+		// Reload when manifest file changes
+		files: [manifestPath],
+		// Show 404 page on invalid urls
+		callbacks: {
+		  ready: (err, browserSync) => {
+			browserSync.addMiddleware('*', (req, res) => {
+			  const fourOFour = fs.readFileSync('_site/404.html');
+			  res.write(fourOFour);
+			  res.end();
+			});
+		  }
+		},
+		// Speed/clean up build time
+		ui: false,
+		ghostMode: false
+	});
+
     // Eleventy doesn't watch changes in files / folders mentioned
     // in .gitignore by default. We disabled that feature since we
     // want eleventy to watch changes in the sass compiles css folder.
-    eleventyConfig.setUseGitIgnore(false);
-
-    // Copy complete directories to _site folder so that they
-    // are available to be rendered.
-    eleventyConfig.addPassthroughCopy("src/admin");
-    eleventyConfig.on("beforeBuild", () => {
-      compress_images(INPUT_path_to_your_images, OUTPUT_path, { compress_force: false, statistic: true, autoupdate: true }, false,
-        { jpg: { engine: "mozjpeg", command: ["-quality", "60"] } },
-        { png: { engine: "pngquant", command: ["--quality=20-50", "-o"] } },
-        { svg: { engine: "svgo", command: "--multipass" } },
-        {gif: { engine: false, command: false } },
-          function (error, completed, statistic) {
-          // console.log("-------------");
-          // console.log(error);
-          // console.log(completed);
-          // console.log(statistic);
-          // console.log("-------------");
-        });
-    });
-
-    // Sass pre-processing
-    eleventyConfig.on("beforeBuild", () => {
-        sass("./src/styles/main.scss", "./_site/src/styles/main.css");
-    });
-    eleventyConfig.addWatchTarget("./src/styles/*.scss");
-
-    // Minify JS
-    eleventyConfig.on("beforeBuild", () => {
-        minifyJs("./src/js/main.js", "./_site/src/js/main.js");
-    });
-    eleventyConfig.addWatchTarget("./src/js/*.js");
+    config.setUseGitIgnore(false);
 
     // Filters
     function sortByPosition(values) {
@@ -54,58 +71,24 @@ module.exports = function (eleventyConfig) {
         return values.sort((a, b) => Math.sign(a.data.title - b.data.title));
     }
 
-    eleventyConfig.addFilter("sortByPosition", sortByPosition);
-    eleventyConfig.addFilter("sortByTitle", sortByTitle);
+    config.addFilter("sortByPosition", sortByPosition);
+    config.addFilter("sortByTitle", sortByTitle);
 
     const md = new markdownIt({
         html: true,
     });
 
-    eleventyConfig.addFilter("markdown", (content) => {
+    config.addFilter("markdown", (content) => {
         return md.render(content);
     });
 
-    eleventyConfig.addNunjucksAsyncShortcode("Image", async (src, alt, cls) => {
-        if (!alt) {
-          throw new Error(`Missing \`alt\` on Image from: ${src}`);
-        }
-
-        let stats = await Image(src, {
-          widths: [null, 1400, 992, 576],
-          formats: ["jpeg", "webp"],
-          urlPath: "/assets/optimized/",
-          outputDir: "./_site/assets/optimized/",
-        });
-
-        let lowestSrc = stats["jpeg"][0];
-
-        const srcset = Object.keys(stats).reduce(
-          (acc, format) => ({
-            ...acc,
-            [format]: stats[format].reduce(
-              (_acc, curr) => `${_acc} ${curr.srcset} ,`,
-              ""
-            ),
-          }),
-          {}
-        );
-
-        const source = `<source type="image/webp" srcset="${srcset["webp"]}" >`;
-
-        const img = `<img
-          class="${cls}"
-          loading="lazy"
-          alt="${alt}"
-          src="${lowestSrc.url}"
-          srcset="${srcset["jpeg"]}"
-          style="max-width: 100%">`;
-
-        return `<picture> ${source} ${img} </picture>`;
-    });
-
     return {
-        dir: {
-            input: "src",
-        },
-    };
+		dir: { input: 'src' },
+		// Allow nunjucks, markdown and 11ty files to be processed
+		// templateFormats: ['njk', 'md', '11ty.js'],
+		// htmlTemplateEngine: 'njk',
+		// Allow pre-processing `.md` files with nunjucks
+		// thus transforming the shortcodes
+		// markdownTemplateEngine: 'njk'
+	};
 };
