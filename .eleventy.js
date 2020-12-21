@@ -22,7 +22,6 @@ module.exports = function (config) {
 	});
 
 	// Shortcodes
-	config.addShortcode('icon', shortcodes.icon);
 	config.addNunjucksAsyncShortcode('image', shortcodes.image);
 	config.addNunjucksAsyncShortcode('background_image', shortcodes.background_image);
 	config.addNunjucksAsyncShortcode('webpack', shortcodes.webpack);
