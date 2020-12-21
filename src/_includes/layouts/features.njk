@@ -29,7 +29,7 @@ layout: layouts/base.njk
                     <h1> {{ feature.data.title  | capitalize }} </h1>
                     <p> {{ feature.data.description }}</p>
                     <div class="mt-5">
-                        <a href="#{{ feature.data.title | slug }}" class="btn btn-secondary text-uppercase" data-toggle="collapse">View features</a>
+                        <a href="#{{ feature.data.title | slug }}" class="btn btn-secondary text-uppercase" data-bs-toggle="collapse">View features</a>
                     </div>
                 </div>
         {%- else -%}
@@ -43,7 +43,7 @@ layout: layouts/base.njk
                     <h1> {{ feature.data.title | capitalize }} </h1>
                     <p> {{ feature.data.description }}</p>
                     <div class="mt-5">
-                        <a href="#{{ feature.data.title | slug }}" class="btn btn-primary text-uppercase" data-toggle="collapse">View features</a>
+                        <a href="#{{ feature.data.title | slug }}" class="btn btn-primary text-uppercase" data-bs-toggle="collapse">View features</a>
                     </div> </div>
                 <div class="col-lg-8 d-none d-lg-block text-center">
                     {% image feature.data.image, feature.data.title %}

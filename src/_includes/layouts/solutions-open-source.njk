@@ -7,7 +7,7 @@ layout: layouts/markdown_page.njk
     <div class="container py-5">
         <div class="wrapper-carousel-fix">
             <!-- Carousel Wrapper -->
-            <div id="carousel-example-1" class="carousel no-flex testimonial-carousel slide carousel-fade" data-ride="carousel" data-interval="false">
+            <div id="carousel-example-1" class="carousel no-flex testimonial-carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="false">
             <!--Slides-->
             <div class="carousel-inner" role="listbox">
                 {%- for testimonial in collections.testimonial -%}
@@ -31,11 +31,11 @@ layout: layouts/markdown_page.njk
             </div>
             <!--Slides-->
             <!--Controls-->
-            <a class="carousel-control-prev left carousel-control" href="#carousel-example-1" role="button" data-slide="prev">
+            <a class="carousel-control-prev left carousel-control" href="#carousel-example-1" role="button" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
             </a>
-            <a class="carousel-control-next right carousel-control" href="#carousel-example-1" role="button" data-slide="next">
+            <a class="carousel-control-next right carousel-control" href="#carousel-example-1" role="button" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </a>
