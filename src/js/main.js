@@ -1,6 +1,6 @@
 "use strict";
 
-import 'bootstrap';
+import {Button, Carousel, Collapse, Dropdown, Scrollspy, Tab} from 'bootstrap';
 
 function go_to_app_download_link(platform) {
     var request = new Request(

@@ -8,8 +8,8 @@ hosted_domain: https://netlify-home.zulipdev.org
 <head>
 <link id="favicon" rel="icon" href="assets/images/favicon.svg">
 <!-- CSS only -->
-<link rel="stylesheet" href="{% webpack 'main.css' %}">
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<link rel="stylesheet" href="{% webpack 'main.css' %}" media="all">
+<script async defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <meta charset="utf-8">
@@ -60,5 +60,5 @@ hosted_domain: https://netlify-home.zulipdev.org
 </script>
 <!-- Custom JavaScript -->
 <script async defer src="{% webpack 'main.js' %}"></script>
-<script>{{ js | safe }}</script>
+<script async defer>{{ js | safe }}</script>
 </html>
