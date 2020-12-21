@@ -25,7 +25,7 @@ layout: layouts/base.njk
 
 	.hero {
 		position: relative;
-		background-image: url("{{ hero_image }}");
+		background-image: url("{% background_image hero_image %}");
 		background-size: cover;
 		background-position: center;
 		padding: 225px 50px 125px 50px;

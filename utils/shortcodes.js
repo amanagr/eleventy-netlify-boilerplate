@@ -40,6 +40,30 @@ module.exports = {
       <use xlink:href="/assets/images/sprite.svg#${name}"></use>
     </svg>`;
     },
+	background_image: async (src) => {
+
+        const extension = path.extname(src).slice(1).toLowerCase();
+        const fullSrc = isFullUrl(src) ? src : `./${src}`;
+
+        let stats;
+        try {
+            stats = await Image(fullSrc, {
+                widths: [null],
+                formats: ['jpeg'],
+                urlPath: '/assets/images/',
+                outputDir: '_site/assets/images/',
+            });
+        } catch (e) {
+            console.log('\n\x1b[31mERROR\x1b[0m creating image:');
+            console.log(`> (${fullSrc})`);
+            console.log(`  ${e}\n`);
+            return '';
+        }
+
+		return stats['jpeg'][0]['url'];
+
+
+	},
 
     // Allow embedding responsive images
     // {% image "image.jpeg", "Image alt", "my-class"%}
