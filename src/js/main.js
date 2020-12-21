@@ -52,3 +52,13 @@ function redirect_to_app_platform() {
         window.location.href = redirect_to;
     }
 }
+
+document.getElementById("apps-nav-btn").onclick = redirect_to_app_platform;
+
+const download_btn = document.getElementById("apps-download-btn");
+if (download_btn) {
+	download_btn.onclick = function () {
+		go_to_app_download_link(download_btn.dataset.platform);
+	}
+}
+

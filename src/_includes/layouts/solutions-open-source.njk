@@ -7,7 +7,7 @@ layout: layouts/markdown_page.njk
     <div class="container py-5">
         <div class="wrapper-carousel-fix">
             <!-- Carousel Wrapper -->
-            <div id="carousel-example-1" class="carousel no-flex testimonial-carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="false">
+            <div id="carousel-example-1" class="carousel no-flex testimonial-carousel slide" data-bs-ride="carousel" data-bs-interval="false">
             <!--Slides-->
             <div class="carousel-inner" role="listbox">
                 {%- for testimonial in collections.testimonial -%}
@@ -16,7 +16,7 @@ layout: layouts/markdown_page.njk
                         <div class="testimonial">
                             <!--Avatar-->
                             <div class="avatar mx-auto mb-4">
-                                <img src="{{ testimonial.data.image }}" class="rounded-circle img-fluid" alt="author avatar">
+                                    {% image testimonial.data.image, "Author avatar", "rounded-circle" %}
                             </div>
                             <!--Content-->
                             <p>

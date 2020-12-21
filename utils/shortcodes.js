@@ -27,19 +27,6 @@ module.exports = {
             );
         }),
 
-    // Allow embedding svg icon
-    // {% icon "github.svg", "my-class", [24, 24] %}
-    icon: (name, className, size = iconDefaultSize) => {
-        if (!Array.isArray(size)) size = [size];
-        return outdent({ newline: '' })`
-    <svg class="icon icon--${name} ${
-            className || ''
-        }" role="img" aria-hidden="true" width="${size[0]}" height="${
-            size[1] || size[0]
-        }">
-      <use xlink:href="/assets/images/sprite.svg#${name}"></use>
-    </svg>`;
-    },
 	background_image: async (src) => {
 
         const extension = path.extname(src).slice(1).toLowerCase();
@@ -78,9 +65,7 @@ module.exports = {
         const src = args[0];
         const alt = args[1];
         const className = args[2];
-        const title = args[3] ? args[3] : false;
-        const lazy = args[4] ? args[4] : true;
-        const sizes = args[5] ? args[5] : defaultSizes;
+        const sizes = args[3] ? args[3] : defaultSizes;
 
         const extension = path.extname(src).slice(1).toLowerCase();
         const fullSrc = isFullUrl(src) ? src : `./${src}`;
@@ -116,17 +101,11 @@ module.exports = {
           .join('')}
       <img
         class="${className ? `${className} img-fluid` : 'img-fluid'}"
-        loading="${lazy ? 'lazy' : 'eager'}"
+        loading="lazy"
         src="${fallback.url}"
         width="${fallbackWidth ? fallbackWidth : fallback.width}"
         height="${fallbackHeight ? fallbackHeight : fallback.height}" alt="${alt}">
     </picture>`;
-        return title
-            ? outdent({ newline: '' })`
-      <figure class="${className ? `fig-${className}` : ''}"
-        ${picture}
-        <figcaption>${markdown.renderInline(title)}</figcaption>
-      </figure>`
-            : picture;
+		return picture;
     },
 };
