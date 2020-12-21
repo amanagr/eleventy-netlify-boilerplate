@@ -317,6 +317,7 @@ nav.navbar {
 
         img {
             height: $home-testimonial-avatar-height;
+            max-width: $home-testimonial-avatar-height;
         }
 
         .carousel-control {
