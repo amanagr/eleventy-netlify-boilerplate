@@ -2,6 +2,7 @@
 
 import {Button, Carousel, Collapse, Dropdown, Scrollspy, Tab} from 'bootstrap';
 
+// /apps page logic
 function go_to_app_download_link(platform) {
     var request = new Request(
         "https://api.github.com/repos/zulip/zulip-desktop/releases",
@@ -61,4 +62,3 @@ if (download_btn) {
 		go_to_app_download_link(download_btn.dataset.platform);
 	}
 }
-

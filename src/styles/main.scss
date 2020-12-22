@@ -1,6 +1,7 @@
 // Import our custom variables
 @import 'variables';
 
+// ----- Bootstrap Imports --------
 // Configuration
 @import '../../node_modules/bootstrap/scss/functions';
 @import '../../node_modules/bootstrap/scss/variables';
@@ -32,7 +33,12 @@
 
 // Utilities
 @import '../../node_modules/bootstrap/scss/utilities/api';
-// scss-docs-end import-stack
+
+// ------ Font awesome Imports ------
+$fa-font-path: "../../node_modules/@fortawesome/fontawesome-free/webfonts";
+@import '../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome';
+@import '../../node_modules/@fortawesome/fontawesome-free/scss/brands';
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/solid";
 
 /* -- defaults -- */
 body {
