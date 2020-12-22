@@ -25,7 +25,7 @@ layout: layouts/base.njk
 
     .hero {
         position: relative;
-        background-image: url("{{ hero_image }}");
+        background-image: url("{% background_image hero_image %}");
         background-size: cover;
         background-position: center;
         padding: 225px 50px 125px 50px;
@@ -69,7 +69,7 @@ layout: layouts/base.njk
             <!-- Tim -->
             <div class="profile row">
                 <div class="profile-picture col-md-3 m-auto mt-0">
-                    <img src="/images/tim.png" class="w-100" alt="" />
+					{% image "images/tim.png", "Tim's photo", "w-100" %}
                 </div>
                 <div class="profile-information col-md-9">
                     <h2 class="profile-name">Tim Abbott</h2>

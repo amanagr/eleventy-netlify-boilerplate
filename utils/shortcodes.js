@@ -55,7 +55,6 @@ module.exports = {
 
     // Allow embedding responsive images
     // {% image "image.jpeg", "Image alt", "my-class"%}
-    // {% image [100,100], "image.jpeg", "Image alt", "my-class", "Image title" %}
     image: async (...args) => {
         let fallbackWidth, fallbackHeight;
 
