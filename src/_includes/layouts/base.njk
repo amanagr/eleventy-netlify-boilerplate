@@ -6,7 +6,7 @@ hosted_domain: https://netlify-home.zulipdev.org
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link id="favicon" rel="icon" href="assets/images/favicon.svg">
+<link id="favicon" rel="icon" href="{% background_image "images/favicon.svg", null %}">
 <!-- CSS only -->
 <link rel="stylesheet" href="{% webpack 'main.css' %}" media="all">
 <script async defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>

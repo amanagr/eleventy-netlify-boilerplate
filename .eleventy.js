@@ -31,7 +31,6 @@ module.exports = function (config) {
     // are available to be rendered.
     config.addPassthroughCopy("src/admin");
 	config.addPassthroughCopy('src/_headers');
-	config.addPassthroughCopy({'images/favicon.svg' : 'assets/images/favicon.svg'});
 	// Everything inside static is copied verbatim to `_site`
 	config.addPassthroughCopy('src/assets/static');
 

@@ -82,11 +82,5 @@ module.exports = {
       },
     ],
   },
-  resolve: {
-    alias: {
-      // Helpful alias for importing assets
-      assets: path.resolve(__dirname, "src/assets"),
-    },
-  },
 };
 

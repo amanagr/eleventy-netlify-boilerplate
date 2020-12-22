@@ -27,17 +27,21 @@ module.exports = {
             );
         }),
 
-	background_image: async (src) => {
+	background_image: async (src, format) => {
 
         const extension = path.extname(src).slice(1).toLowerCase();
         const fullSrc = isFullUrl(src) ? src : `./${src}`;
 
         let stats;
+		if (format === undefined ) {
+			format = 'jpeg'
+		}
+
         try {
             stats = await Image(fullSrc, {
                 widths: [null],
-                formats: ['jpeg'],
-                urlPath: '/assets/images/',
+                formats: [format],
+				urlPath: '/assets/images/',
                 outputDir: '_site/assets/images/',
             });
         } catch (e) {
@@ -46,10 +50,7 @@ module.exports = {
             console.log(`  ${e}\n`);
             return '';
         }
-
-		return stats['jpeg'][0]['url'];
-
-
+		return stats[Object.keys(stats).reverse()[0]][0]['url'];
 	},
 
     // Allow embedding responsive images
