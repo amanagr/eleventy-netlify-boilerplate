@@ -43,6 +43,7 @@ module.exports = function (config) {
 		callbacks: {
 		  ready: (err, browserSync) => {
 			browserSync.addMiddleware('*', (req, res) => {
+              res.writeHead(404, {'Content-Type': 'text/html; charset=UTF-8'});
 			  const fourOFour = fs.readFileSync('_site/404.html');
 			  res.write(fourOFour);
 			  res.end();
