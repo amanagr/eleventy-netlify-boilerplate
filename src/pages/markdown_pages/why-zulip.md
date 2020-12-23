@@ -265,9 +265,9 @@ description: >
   ## Further reading
 
 
-  - [Zulip features](/features.html)
+  - [Zulip features](/features/)
 
-  - [Plans and pricing](/pricing.html)
+  - [Plans and pricing](/pricing/)
 
   - [Zulip for companies](/for/companies)
 
@@ -275,5 +275,5 @@ description: >
 
   - [Zulip for working groups and communities](/for/working-groups-and-communities)
 show: true
-permalink: /why-zulip.html
+permalink: /why-zulip/
 ---

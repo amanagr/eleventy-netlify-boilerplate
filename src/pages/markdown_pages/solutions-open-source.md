@@ -229,5 +229,5 @@ markdown_open_source: >
     us](/help/contact-support) and we'll do what we can to help!
 
 show: true
-permalink: /solutions/open-source.html
+permalink: /solutions/open-source/
 ---

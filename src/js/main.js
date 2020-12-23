@@ -48,7 +48,7 @@ function redirect_to_app_platform() {
     if (navigator.appVersion.indexOf("Android") != -1) OS = "android";
     if (navigator.appVersion.indexOf("like Mac") != -1) OS = "ios";
 
-    const redirect_to = "/apps/" + OS + ".html";
+    const redirect_to = "/apps/" + OS + "/";
     if (!window.location.href.endsWith(redirect_to)) {
         window.location.href = redirect_to;
     }

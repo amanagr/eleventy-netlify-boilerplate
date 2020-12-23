@@ -54,5 +54,5 @@ description: >
     back into the group.
 
 show: true
-permalink: /solutions/working-groups-and-communities.html
+permalink: /solutions/working-groups-and-communities/
 ---

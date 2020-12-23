@@ -2,7 +2,7 @@
 layout: layouts/apps.njk
 title: Linux app
 platform: linux
-permalink: apps/linux.html
+permalink: apps/linux/
 app_heading: Zulip for Linux
 app_description: >-
     Zulip on the Linux desktop is even better than Zulip on the web, with a

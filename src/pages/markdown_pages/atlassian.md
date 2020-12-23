@@ -77,5 +77,5 @@ description: >
   installing and configuring Zulip.
 
 show: true
-permalink: /atlassian.html
+permalink: /atlassian/
 ---

@@ -2,7 +2,7 @@
 layout: layouts/apps.njk
 title: Windows app
 platform: windows
-permalink: apps/windows.html
+permalink: apps/windows/
 app_heading: Zulip for Windows
 app_description: >-
     Zulip for Windows is even better than Zulip on the web, with a cleaner look,

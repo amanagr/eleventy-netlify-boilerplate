@@ -191,5 +191,5 @@ description: >
     - Detailed
       [security model documentation](https://zulip.readthedocs.io/en/latest/production/security-model.html)
 show: true
-permalink: /security.html
+permalink: /security/
 ---

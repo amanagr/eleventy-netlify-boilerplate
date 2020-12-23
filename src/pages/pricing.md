@@ -1,5 +1,5 @@
 ---
 layout: layouts/pricing.njk
-permalink: /pricing.html
+permalink: /pricing/
 title: Pricing
 ---

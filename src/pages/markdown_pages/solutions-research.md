@@ -186,5 +186,5 @@ markdown_open_source: >
     [contact us](/help/contact-support) and we'll do what we can to help!
 
 show: true
-permalink: /solutions/research.html
+permalink: /solutions/research/
 ---
